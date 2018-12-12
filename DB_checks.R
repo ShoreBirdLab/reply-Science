@@ -2,7 +2,7 @@ Sys.setenv(TZ="UTC") # set time to UTC to have always same time
 require("anytime")
 require("data.table")
 require("googlesheets")
- 
+
 for_gs = gs_title("Kubelka_et_al_rebuttal")
 d = data.table(gs_read(for_gs, ws = 'nests'))
 a = data.table(gs_read(for_gs, ws = 'authors'))
@@ -27,11 +27,11 @@ summary(factor(d$nest_exp))
 summary(factor(d$study_site_exp))
 
 # check continuous
-summary(abs(d$lat))
+summary(abs(as.numeric(d$lat)))
 d[abs(lat)<10] 
 summary(d$lon)
 d[is.na(lon)]
-summary(d$eggs)
+summary(as.numeric(d$eggs))
 summary(factor(d$eggs)) # how 0 or NA or 5-8 eggs possible?
 nrow(d[is.na(eggs)])
 
