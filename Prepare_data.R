@@ -34,7 +34,7 @@ b$DPR_orig = as.numeric(b$DPR_orig)
 b$Exposure_days = as.numeric(b$Exposure_days)
 b$N_nests = as.numeric(b$N.nests)
 b$"Failed_together." = as.numeric(b$"Failed_together.")
-
+b$other_failed = as.numeric(b$other_failed)
 
 b$site = paste(b$Latitude,b$Longitude) # define site
 b$lat_abs = abs(b$Latitude) # abs latitude

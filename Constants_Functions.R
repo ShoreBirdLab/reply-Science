@@ -59,7 +59,7 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
   return( newphylo)
 }
 # model output function
-  m_out = function(name = "define", model = m, round_ = 3, nsim = 5000){
+  m_out = function(name = "define", model = m, round_ = 3, nsim = 5000, aic = TRUE){
 	bsim <- sim(model, n.sim=nsim)  
 	 v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
 	 ci = apply(bsim@fixef, 2, quantile, prob=c(0.025,0.975))	
@@ -75,10 +75,13 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
 	 l$var1 = ifelse(is.na(l$var1),"",l$var1)
 	 l$pred = paste(l$grp,l$var1)
 	ri=data.frame(model=name,type='random %',effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)), lwr_r=NA, upr_r=NA)
+	ri$estimate_r = paste(ri$estimate_r,'%',sep='')
 	x = rbind(oii,ri)
+	if (aic == TRUE){	
 		x$AIC = NA
 		x$AIC[1]=AIC(model) # note that this one is incorrect because it is fitted with REML
 		x$delta = x$prob = x$ER = NA
+		}
     return(x)
   } 
 # model assumption function
@@ -89,13 +92,13 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
 	png(paste(outdir,name, ".png", sep=""), width=6,height=9,units="in",res=600)
 	 }else{dev.new(width=6,height=9)}
    
-   n = nrow(l)-1+length(fixed)+length(categ) + 6
+   n = nrow(l)-1+length(fixed)+length(categ) + 7
    par(mfrow=c(ceiling(n/3),3))
    
    scatter.smooth(fitted(mo),resid(mo),col='grey');abline(h=0, lty=2, col ='red')
    scatter.smooth(fitted(mo),sqrt(abs(resid(mo))), col='grey')
    qqnorm(resid(mo), main=list("Normal Q-Q Plot: residuals", cex=0.8),col='grey');qqline(resid(mo))
-   unique(l$grp[l$grp!="Residual"])
+   #unique(l$grp[l$grp!="Residual"])
    for(i in unique(l$grp[l$grp!="Residual"])){
 	#i = "mean_year"
 	ll=ranef(mo)[names(ranef(mo))==i][[1]]
@@ -130,7 +133,7 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
 	if(length(categ)>0){
 	  for(i in categ){
 		 variable=dat[,names(dat)==i]
-		  plot(resid(mo)~variable, medcol='grey', whiskcol='grey', staplecol='grey', boxcol='grey', outcol='grey');abline(h=0, lty=3, lwd=1, col = 'red')
+		  boxplot(resid(mo)~variable, medcol='grey', whiskcol='grey', staplecol='grey', boxcol='grey', outcol='grey');abline(h=0, lty=3, lwd=1, col = 'red')
 		 }
 	}	  
 		  
