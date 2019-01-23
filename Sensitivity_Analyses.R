@@ -10,27 +10,37 @@ PNG = TRUE
 		source(paste(wd, 'Constants_Functions.R',sep=""))
 		source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as Kubelke et al's script
 
-cols = brewer.pal(n = 9, name = "Blues")	
+cols = brewer.pal(n = 9, name = "Blues")[9:1]	
+cols = brewer.pal(n = 9, name = "Spectral")	
 b$other_failed0 = as.numeric(ifelse(is.na(b$other_failed),0,b$other_failed))
-{# all years
+
+# DPR from Kubelka's input valuts
+b$expMB = (b$obs_time*b$Incubation_days*(b$other_failed0 +b$predated)/2)+(b$obs_time*b$Incubation_days*(b$hatched+b$infertile))
+b$DPR_MB = b$predated/b$expMB
+plot(b$DPR_MB ~ b$DPR_orig)
+{# all years less2000Beintema_changed
 if(PNG == TRUE) {
-		png(paste(outdir,"sensitivity_anal.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
+		png(paste(outdir,"sensitivity_anal_less2000Beintema_changed_seq-col.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
 		#	png(paste(outdir,"Figure_1a_Arc_temp.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
 					#jpeg(paste(outdir,"Figure_3.jpeg", sep=""), width=3.5,height=1.85,units="in",res=600) 
 					}else{
 					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
 					}	
 par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
-plot(b$DPR~b$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,0.1),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
+plot(b$DPR~b$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,0.16),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
 axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
 			mtext('Year',side=1,line=0.6, cex=0.6, las=1, col='grey30')
-axis(2, at=seq(0,0.1, by = 0.01), labels=seq(0,0.1, by = 0.01), lwd = 0.5)
+axis(2, at=seq(0,0.16, by = 0.02), labels=seq(0,0.16, by = 0.02), lwd = 0.5)
 			mtext('Daily nest predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
-text(x = c(1980,2000, 2006, 2010), y =0.1, labels= c('Beintema:','0.1','-','0.9'), col=c('darkgrey',cols[2], 'darkgrey', cols[9]), cex = 0.5, adj = 0)			
+#text(x = c(1980,2000, 2006, 2010), y =0.1, labels= c('Beintema:','0.1','-','0.9'), col=c('darkgrey',cols[2], 'darkgrey', cols[9]), cex = 0.5, adj = 0)	
+text(x = c(2016), y =0.16, labels= c('Beintema:'), col='grey18', cex = 0.5, adj = 1)
+for(i in 1:length(seq(0.1,0.9,by=0.1))){
+			text(x = 2016, y =0.16-(i)*0.06923077*0.16, labels= seq(0.1,0.9,by=0.1)[i], col=cols[i], cex = 0.5, adj = 1)
+			}			
 for(i in 1: length(seq(0.1,0.9, by = 0.1))){
- #i=5
+ #i=4
  r = seq(0.1,0.9, by = 0.1)[i]
- b$expMB_r = (r*b$Incubation_days*b$predated/2)+(r*b$Incubation_days*(b$hatched+b$infertile))
+ b$expMB_r = (r*b$Incubation_days*(b$other_failed0 +b$predated)/2)+(r*b$Incubation_days*(b$hatched+b$infertile))
  b$expMB_r = ifelse(grepl('Moit',b$'References.and.notes'),(r*b$Incubation_days*b$"Failed_together."/2)+(r*b$Incubation_days*(b$hatched+b$infertile)), b$expMB_r)
  b$expMB_r = ifelse(grepl('Favero',b$'References.and.notes'),(r*b$Incubation_days*b$"Failed_together."/2)+(r*b$Incubation_days*(b$hatched+b$infertile)), b$expMB_r)
  b$DPR_MB_r = b$predated/b$expMB_r
@@ -54,7 +64,7 @@ for(i in 1: length(seq(0.1,0.9, by = 0.1))){
 	
 		ppi = newD
 		polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr)-0.01, 
-		  rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(cols[i],alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+		  rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(cols[i],alpha.f = 0.2), xpd = FALSE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
 		lines(ppi$mean_year, exp(ppi$pred)-0.01, col=cols[i],lwd=1)
 print(i)
 	}

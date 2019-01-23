@@ -4,11 +4,16 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
 
 # CONSTANTS
   nsim = 5000
+  col_p="gray53"  # color of point's outline
+  col_pb="gray98"  # color of point's background	
   col_ = data.frame(
 		year_ = c(1970,1980,1990,2000,2010),
 		Belt = c('South temperate','South tropics','North tropics','North temperate','Arctic'),
-		line_col = c("lightseagreen","dimgray","brown","darkolivegreen","red"),#line_col = c("lightseagreen","dimgray","brown","darkolivegreen","deeppink3"),
+		#line_col = c("lightseagreen","dimgray","brown","darkolivegreen","red"),
+		line_col = c("#72c5c9","#9c9c9c","#bf786b","#729f44","#e7629c"),
+		#line_col = c("lightseagreen","dimgray","brown","darkolivegreen","deeppink3"),
 		poly_col = c("paleturquoise1","gainsboro","navajowhite2","darkolivegreen3","lightpink"),
+		year_col = brewer.pal(n = 9, name = "Blues")[c(3,4,5,7,9)],#[c(5,6,7,8,9)],#
 		stringsAsFactors=FALSE
 		)
 	
@@ -113,6 +118,7 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
    # variables
    scatter={} 
    for (i in rownames(summary(mo)$coef)) {
+		#i = "lat_abs"
       j=sub("\\).*", "", sub(".*\\(", "",i)) 
       scatter[length(scatter)+1]=j
     }

@@ -1,4 +1,7 @@
-rm( list = ls() )	
+# FIGURES info 
+	#5.5 cm (2.25 inches or 1 column) or 12.0 cm (4.75 inches or 2 columns)
+	#Symbols and lettering should be large enough to be legible after reduction [a reduced size of about 7 points (2 mm) high, and not smaller than 5 points].
+	rm( list = ls() )	
 
 # set working and output directories
 wd = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Analyses/'
@@ -76,8 +79,8 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 					}	
 		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
 		plot(exp(pp$pred)~pp$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
-		axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-			mtext('Year',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+		axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+			mtext('Year',side=1,line=0.3, cex=0.6, las=1, col='grey30')
 		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
 				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		text(x = 2016, y =100, labels= expression(bold("A")), col='black', cex = 0.7, adj = 0)
@@ -204,8 +207,8 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 					}	
 		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
 		plot(exp(pp$pred)~pp$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
-		axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-			mtext('Year',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+		axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+			mtext('Year',side=1,line=0.6, cex=0.3, las=1, col='grey30')
 		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
 				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		text(x = 2016, y =100, labels= expression(bold("B")), col='black', cex = 0.7, adj = 0)
@@ -277,8 +280,8 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 					}	
 		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
 		plot(exp(pp$pred)~pp$mean_year, pch=19,xlim=c(2000,2016), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
-		axis(1, at=c(2000,2005,2010,2015),labels=c(2000,2005,2010,2015),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-			mtext('Year',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+		axis(1, at=c(2000,2005,2010,2015),labels=c(2000,2005,2010,2015),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+			mtext('Year',side=1,line=0.3, cex=0.6, las=1, col='grey30')
 		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
 				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		text(x = 2016, y =100, labels= expression(bold("C")), col='black', cex = 0.7, adj = 0)
@@ -302,9 +305,64 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 			if(PNG == TRUE) {dev.off()}
 }
 	
-col_p="gray53"  # color of point's outline
-col_pb="gray98"  # color of point's background	
+
 # FIGURE 1D - TPR only OK data 
+{# predictions
+    dd =d[d$DPR_trans == 'NO',]
+		summary(factor(dd$Belt))
+	m = lmer(TPR ~ ln_N_nests + mean_year + (1|mean_year) +(1|site)+(1|species),  data =dd )
+		nsim <- 5000
+		bsim <- sim(m, n.sim=nsim)  
+		
+		# coefficients
+		v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
+				
+		# values to predict for		
+		newD=data.frame(ln_N_nests = mean(dd$ln_N_nests),mean_year = seq(min(dd$mean_year),max(dd$mean_year), length.out=300))
+		
+					
+		# exactly the model which was used has to be specified here 
+			X <- model.matrix(~ ln_N_nests + mean_year,data=newD)	
+								
+		# calculate predicted values and creditability intervals
+			newD$pred <- X%*%v # #newD$fit_b <- plogis(X%*%v) # in case on binomial scaleback
+			predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
+			for(i in 1:nsim) predmatrix[,i] <- X%*%bsim@fixef[i,]
+					newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
+					newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
+			ps=newD	
+}
+{# raw data
+	dd$int = ifelse(dd$mean_year<1975, 1970, ifelse(dd$mean_year<1985, 1980, ifelse(dd$mean_year<1995, 1990, ifelse(dd$mean_year<2005, 2000, 2010))))
+	dd$n = 1
+	ddr = ddply(dd,('int'), summarise, med = median (TPR), n = sum(n))
+}
+{# plot
+	if(PNG == TRUE) {
+		png(paste(outdir,"Figure_1D_TPR_noTransData.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
+		#	png(paste(outdir,"Figure_1a_Arc_temp.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
+					#jpeg(paste(outdir,"Figure_3.jpeg", sep=""), width=3.5,height=1.85,units="in",res=600) 
+					}else{
+					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
+					}	
+		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
+		plot(exp(pp$pred)~pp$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
+		axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+			mtext('Year',side=1,line=0.3, cex=0.6, las=1, col='grey30')
+		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
+				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
+		text(x = 2016, y =100, labels= expression(bold("D")), col='black', cex = 0.7, adj = 0)
+		ppi = ps
+		polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(100*(ppi$lwr), 
+		  rev(100*(ppi$upr))), border=NA, col = adjustcolor('black',alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+		lines(ppi$mean_year, 100*(ppi$pred), col='black',lwd=1)
+		
+		symbols((ddr$int),(ddr$med)*100, circles=sqrt(ddr$n/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE) 
+			
+			if(PNG == TRUE) {dev.off()}
+}
+
+# FIGURE 1Ddpr - DPR only OK data 
 {# predictions
     dd =d[d$DPR_trans == 'NO',]
 		
@@ -343,10 +401,10 @@ col_pb="gray98"  # color of point's background
 					}else{
 					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
 					}	
-		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
+		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
 		plot(exp(pp$pred)~pp$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
-		axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-			mtext('Year',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+		axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+			mtext('Year',side=1,line=0.3, cex=0.6, las=1, col='grey30')
 		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
 				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		text(x = 2016, y =100, labels= expression(bold("D")), col='black', cex = 0.7, adj = 0)
@@ -360,7 +418,8 @@ col_pb="gray98"  # color of point's background
 			if(PNG == TRUE) {dev.off()}
 }
 
-# FIGURE 1E latitude
+
+# FIGURE 1E latitude TPR
   {# predictions
      dd =d
 		m <- lmer(TPR ~ ln_N_nests + poly(Latitude,3)*scale(mean_year) + (1|mean_year) +(1|site)+(1|species),  data =dd )
@@ -389,8 +448,8 @@ col_pb="gray98"  # color of point's background
 					newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
 					newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
 			pp=newD	
-			pp$line_col = col_$line_col[match(pp$mean_year, col_$year_)]
-			pp$poly_col = col_$poly_col[match(pp$mean_year, col_$year_)]
+			pp$line_col = col_$year_col[match(pp$mean_year, col_$year_)]
+			pp$poly_col = col_$year_col[match(pp$mean_year, col_$year_)]
 	
 	dd$mean_year_s=scale(dd$mean_year)
 	m <- lmer(TPR ~ ln_N_nests + poly(Latitude,3)+mean_year_s + (1|mean_year) +(1|site)+(1|species),  data =dd )
@@ -419,16 +478,16 @@ col_pb="gray98"  # color of point's background
   {# plot 
 	general = FALSE
 	if(PNG == TRUE) {
-		png(paste(outdir,"Figure_4E_TPR.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
+		png(paste(outdir,"Figure_4E_TPR_col.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
 		#	png(paste(outdir,"Figure_1a_Arc_temp.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
 					#jpeg(paste(outdir,"Figure_3.jpeg", sep=""), width=3.5,height=1.85,units="in",res=600) 
 					}else{
 					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
 					}	
-		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
+		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
 		plot(pp$pred~pp$Latitude, pch=19,xlim=c(-80,80), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
-		axis(1, at = seq(-80,80, by = 20),labels=paste(seq(-80,80, by = 20),'°',sep=''),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-				mtext('Latitude',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+		axis(1, at = seq(-80,80, by = 20),labels=paste(seq(-80,80, by = 20),'°',sep=''),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+				mtext('Latitude',side=1,line=0.3, cex=0.6, las=1, col='grey30')
 		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
 				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		text(x = 80, y =100, labels= expression(bold("E")), col='black', cex = 0.7, adj = 0)
@@ -450,7 +509,7 @@ col_pb="gray98"  # color of point's background
 			}else{
 			for(i in 1:length(unique(pp$mean_year))){
 			year_ = c(unique(pp$mean_year))[i]
-			text(x = c(2), y =65+(i-1)*7, labels= year_, col=col_$line_col[col_$year_%in%year_], cex = 0.5, adj = 0)
+			text(x = -80, y =65+(i-1)*7, labels= year_, col=col_$year_col[col_$year_%in%year_], cex = 0.5, adj = 0)
 			}
 			}
 			
@@ -468,6 +527,118 @@ col_pb="gray98"  # color of point's background
 		
 			if(PNG == TRUE) {dev.off()}
 }
+
+# FIGURE 1E latitude DPR
+  {# predictions
+     dd =d
+		m <- lmer(log(DPR) ~ ln_N_nests + poly(Latitude,3)*scale(mean_year) + (1|mean_year) +(1|site)+(1|species),  data =dd )
+		nsim <- 5000
+		bsim <- sim(m, n.sim=nsim)  
+		
+		# coefficients
+		v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
+				
+		# values to predict for		
+		l = list()
+		for(i in c(1970,1980,1990,2000,2010)){
+		 #i ="South temperate"
+	  	 print(i)
+		  l[[i]]=data.frame(ln_N_nests = mean(d$ln_N_nests),mean_year= i, Latitude = seq(min(d$Latitude[d$mean_year>i-6 & d$mean_year<i+5]),max(d$Latitude[d$mean_year>i-6 & d$mean_year<i+5]), length.out=300),stringsAsFactors = FALSE)
+		 }
+		newD = do.call(rbind,l)	
+					
+		# exactly the model which was used has to be specified here 
+			X <- model.matrix(~ ln_N_nests + poly(Latitude,3)*scale(mean_year),data=newD)	
+								
+		# calculate predicted values and creditability intervals
+			newD$pred <- X%*%v # #newD$fit_b <- plogis(X%*%v) # in case on binomial scaleback
+			predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
+			for(i in 1:nsim) predmatrix[,i] <- X%*%bsim@fixef[i,]
+					newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
+					newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
+			pp=newD	
+			pp$line_col = col_$year_col[match(pp$mean_year, col_$year_)]
+			pp$poly_col = col_$year_col[match(pp$mean_year, col_$year_)]
+	
+	dd$mean_year_s=scale(dd$mean_year)
+	m <- lmer(log(DPR) ~ ln_N_nests + poly(Latitude,3)+mean_year_s + (1|mean_year) +(1|site)+(1|species),  data =dd )
+		nsim <- 5000
+		bsim <- sim(m, n.sim=nsim)  
+		
+		# coefficients
+		v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
+				
+		# values to predict for		
+		newD=data.frame(ln_N_nests = mean(d$ln_N_nests),Latitude = seq(min(dd$Latitude),max(dd$Latitude), length.out=300),mean_year_s= mean(dd$mean_year_s))
+	
+					
+		# exactly the model which was used has to be specified here 
+			X <- model.matrix(~ ln_N_nests + poly(Latitude,3)+mean_year_s,data=newD)	
+								
+		# calculate predicted values and creditability intervals
+			newD$pred <- X%*%v # #newD$fit_b <- plogis(X%*%v) # in case on binomial scaleback
+			predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
+			for(i in 1:nsim) predmatrix[,i] <- X%*%bsim@fixef[i,]
+					newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
+					newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
+			ps=newD	
+	
+}
+  {# plot 
+	general = FALSE
+	if(PNG == TRUE) {
+		png(paste(outdir,"Figure_4E_DPR_col2.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
+		#	png(paste(outdir,"Figure_1a_Arc_temp.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
+					#jpeg(paste(outdir,"Figure_3.jpeg", sep=""), width=3.5,height=1.85,units="in",res=600) 
+					}else{
+					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
+					}	
+		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
+
+		plot(exp(pp$pred)-0.01~pp$Latitude, pch=19,xlim=c(-80,80), ylim=c(0,0.07),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
+		axis(1, at = seq(-80,80, by = 20),labels=F,cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+		axis(1, at = seq(-80,80, by = 40),labels=paste(seq(-80,80, by = 40),'°',sep=''),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+				mtext('Latitude',side=1,line=0.3, cex=0.6, las=1, col='grey30')
+		axis(2, at=seq(0,0.07, by = 0.01), labels=seq(0,0.07, by = 0.01), lwd = 0.5)
+				mtext('Daily nest predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
+		text(x = 80, y =100, labels= expression(bold("E")), col='black', cex = 0.7, adj = 0)
+		
+		if(general == TRUE){
+		ppi = ps
+		polygon(c(ppi$Latitude, rev(ppi$Latitude)), c(exp(ppi$lwr)-0.01, 
+		  rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor('black',alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+		lines(ppi$Latitude, exp(ppi$pred)-0.01, col='black',lwd=1)	
+		
+		for(i in 1:length(unique(pp$mean_year))+1){
+			year_ = c(unique(pp$mean_year),'General')[i]
+			if(year_=='General'){
+			text(x = c(-80), y =0.045+(i-1)*0.004846154, labels= year_, col='black', cex = 0.5, adj = 0)
+			}else{
+			text(x = c(-80), y =0.045+(i-1)*0.004846154, labels= year_, col=col_$year_col[col_$year_%in%year_], cex = 0.5, adj = 0)
+			}
+			}	
+			}else{
+			for(i in 1:length(unique(pp$mean_year))){
+			year_ = c(unique(pp$mean_year))[i]
+			text(x = c(-80), y =0.045+(i-1)*0.004846154, labels= year_, col=col_$year_col[col_$year_%in%year_], cex = 0.5, adj = 0)
+			}
+			}
+			
+		for(i in unique(pp$mean_year)){
+						 #i ="Arctic"
+						 print(i)
+						 ppi = pp[pp$mean_year==i,]
+							polygon(c(ppi$Latitude, rev(ppi$Latitude)), c(exp(ppi$lwr)-0.01, 
+								rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.1))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+							
+							lines(ppi$Latitude, exp(ppi$pred)-0.01, col=ppi$line_col,lwd=1)
+						}	
+		
+		
+		
+			if(PNG == TRUE) {dev.off()}
+}
+
 
 # FIGURE 1F latitude
   {# predictions
@@ -504,10 +675,10 @@ col_pb="gray98"  # color of point's background
 					}else{
 					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
 					}	
-		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
+		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
 		plot(ps$pred~ps$lat_abs, pch=19,xlim=c(0,80), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
-		axis(1, at = seq(0,80, by = 20),labels=paste(seq(0,80, by = 20),'°',sep=''),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-				mtext('Latitude',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+		axis(1, at = seq(0,80, by = 20),labels=paste(seq(0,80, by = 20),'°',sep=''),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+				mtext('Latitude',side=1,line=0.3, cex=0.6, las=1, col='grey30')
 		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
 				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		text(x = 80, y =100, labels= expression(bold("F")), col='black', cex = 0.7, adj = 0)
@@ -588,10 +759,10 @@ col_pb="gray98"  # color of point's background
 					}else{
 					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
 					}	
-		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
+		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
 		plot(ps$pred~ps$lat_abs, pch=19,xlim=c(0,80), ylim=c(0,100),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
-		axis(1, at = seq(0,80, by = 20),labels=paste(seq(0,80, by = 20),'°',sep=''),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-				mtext('Latitude',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+		axis(1, at = seq(0,80, by = 20),labels=paste(seq(0,80, by = 20),'°',sep=''),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+				mtext('Latitude',side=1,line=0.3, cex=0.6, las=1, col='grey30')
 		axis(2, at=seq(0,100, by = 20), labels=paste(seq(0,100, by = 20),'%',sep=''), lwd = 0.5)
 				mtext('Total predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		text(x = 80, y =100, labels= expression(bold("F")), col='black', cex = 0.7, adj = 0)
@@ -749,7 +920,7 @@ col_pb="gray98"  # color of point's background
 }
 
 	
-# belt
+# FIGURE 1Balt poly(Belt DPR) - COL correct
 # all data poly + log(DPR)
   {# predictions
      dd =d
@@ -766,7 +937,7 @@ col_pb="gray98"  # color of point's background
 		 #i ="South temperate"
 	  	 print(i)
 		 di = dd[dd$Belt==i,]
-		 l[[i]]=data.frame(ln_N_nests = mean(di$ln_N_nests),mean_year = seq(min(di$mean_year),max(di$mean_year), length.out=300), Belt = i)
+		 l[[i]]=data.frame(ln_N_nests = mean(di$ln_N_nests),mean_year = seq(min(di$mean_year),max(di$mean_year), length.out=300), Belt = i,stringsAsFactors=FALSE)
 		 }
 		newD = do.call(rbind,l)	
 					
@@ -848,37 +1019,40 @@ col_pb="gray98"  # color of point's background
 }
   {# back transformed
 	if(PNG == TRUE) {
-		png(paste(outdir,"Figure_1a_all_orig_poly_back_mean.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
+		png(paste(outdir,"Figure_1Balt_DPRpoly_col.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
 		#	png(paste(outdir,"Figure_1a_Arc_temp.png", sep=""), width=1.85,height=1.85,units="in",res=600)	 
 					#jpeg(paste(outdir,"Figure_3.jpeg", sep=""), width=3.5,height=1.85,units="in",res=600) 
 					}else{
 					dev.new(width=1.85,height=1.85) #dev.new(width=3.5, height=1.97)
 					}	
-		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.15,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
-		plot(exp(pp$pred)~pp$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,0.07),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
+		par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
+		plot(exp(pp$pred)~pp$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,0.07),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')#xaxs="i",yaxs="i")
 									
-			axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.15,0), lwd = 0.5)
-				mtext('Year',side=1,line=0.6, cex=0.6, las=1, col='grey30')
+			axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+				mtext('Year',side=1,line=0.3, cex=0.6, las=1, col='grey30')
 			axis(2, at=seq(0,0.07, by = 0.01), labels=seq(0,0.07, by = 0.01), lwd = 0.5)
 				mtext('Daily nest predation',side=2,line=1.1, cex=0.6, las=3, col='grey30')
 		for(i in unique(dd$Belt)){
 						 #i ="Arctic"
 						 print(i)
 						 ppi = pp[pp$Belt==i,]
-							polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr), 
-								rev(exp(ppi$upr))), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.1))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+							polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr)-0.01, 
+								rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
 							
-							lines(ppi$mean_year, exp(ppi$pred), col=ppi$line_col,lwd=1)
+							lines(ppi$mean_year, exp(ppi$pred)-0.01, col=ppi$line_col,lwd=1)
 						}	
-		ppi = ps
-		polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr), 
-		  rev(exp(ppi$upr))), border=NA, col = adjustcolor('black',alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
-		lines(ppi$mean_year, exp(ppi$pred), col='black',lwd=1)
+		#ppi = ps
+		#polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr)-0.01, 
+		 # rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor('black',alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+		#lines(ppi$mean_year, exp(ppi$pred)-0.01, col='black',lwd=1)
 		
 		#text(x = c(2004,2012), y =log(0.9), labels= col_$Belt[col_$Belt%in%c('North temperate','Arctic')], col=col_$line_col[col_$Belt%in%c('North temperate','Arctic')], cex = 0.5)						
-		text(x = c(1944,1980), y =0.07, labels= c('General',col_$Belt[col_$Belt%in%c('Arctic')]), col=c('black',col_$line_col[col_$Belt%in%c('Arctic')]), cex = 0.5, adj = 0)
-		text(x = c(1944,1980), y =0.065, labels= col_$Belt[col_$Belt%in%c('North temperate','North tropics')], col=col_$line_col[col_$Belt%in%c('North temperate','North tropics')], cex = 0.5, adj = 0)
-		text(x =  c(1944,1980), y =0.06, labels= col_$Belt[col_$Belt%in%c('South tropics','South temperate')], col=col_$line_col[col_$Belt%in%c('South tropics','South temperate')], cex = 0.5, adj = 0)
+		#text(x = c(1944,1980), y =0.07, labels= c('General',col_$Belt[col_$Belt%in%c('Arctic')]), col=c('black',col_$line_col[col_$Belt%in%c('Arctic')]), cex = 0.5, adj = 0)
+		text(x = c(1944), y =0.07, labels= c(col_$Belt[col_$Belt%in%c('Arctic')]), col=c(col_$line_col[col_$Belt%in%c('Arctic')]), cex = 0.5, adj = 0)
+		text(x = c(1944), y =0.065, labels= col_$Belt[col_$Belt%in%c('North temperate')], col=col_$line_col[col_$Belt%in%c('North temperate')], cex = 0.5, adj = 0)
+		text(x = c(1944), y =0.06, labels= col_$Belt[col_$Belt%in%c('North tropics')], col=col_$line_col[col_$Belt%in%c('North tropics')], cex = 0.5, adj = 0)
+		text(x =  c(1944), y =0.055, labels= col_$Belt[col_$Belt%in%c('South tropics')], col=col_$line_col[col_$Belt%in%c('South tropics')], cex = 0.5, adj = 0)
+		text(x =  c(1944), y =0.05, labels= col_$Belt[col_$Belt%in%c('South temperate')], col=col_$line_col[col_$Belt%in%c('South temperate')], cex = 0.5, adj = 0)
 		#text(x = c(2004,2012), y =log(0.9), labels= col_$Belt[col_$Belt%in%c('North temperate','Arctic')], col=col_$line_col[col_$Belt%in%c('North temperate','Arctic')], cex = 0.5)
 						#text(x = seq(2000,2016, by = 4), y =log(0.9), labels= col_$Belt, col=col_$line_col, cex = 0.5)
 				

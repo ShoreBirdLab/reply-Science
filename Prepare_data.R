@@ -49,6 +49,7 @@ d$source_id = b$source_id[match(paste(d$species, d$mean_year, round(d$Latitude,2
 #d[is.na(d$source_id),]
 #x = d$species[is.na(d$source_id)]
 #b[b$species%in%x,c('species','mean_year','Latitude')]
+d$Belt = as.factor(d$Belt) # define site
 d$site = paste(d$Latitude,d$Longitude) # define site
 d$lat_abs = abs(d$Latitude) # abs latitude
 d$ln_N_nests = log(d$N_nests)
