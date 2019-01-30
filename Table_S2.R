@@ -16,26 +16,29 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 # TABLE S2 - control for year and study site
 # DPR
 	# simple	
-     m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt + (1|mean_year) +(1|site)+(1|species),  data = d)  
-		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt + (1|mean_year) +(1|site)+(1|species),  data = d[d$mean_year>1970,])  
-		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt + (1|mean_year) +(1|site)+(1|species),  data = d[d$DPR_trans=='NO',])  
+     m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d)  
+		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$mean_year>1970,])  
+		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$DPR_trans=='NO',])  
+		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$DPR_trans=='NO' & d$mean_year>1970,])  
+		#m = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$years_nr<11 & d$mean_year>1970,])   
+		
 	# interaction linear
-    m1 = lmer(log(DPR) ~ log( N_nests) + mean_year*Belt + (1|mean_year) +(1|site)+(1|species),  data = d)
+    m1 = lmer(log(DPR) ~ log( N_nests) + mean_year*Belt +(1|site)+(1|species),  data = d)
  
     # interaction 2nd polynomial
     m2 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt + (1|site)+(1|species),  data = d)
 
 	# simple 2nd polynomial
-    m3 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)+Belt + (1|mean_year) +(1|site)+(1|species),  data = d)
+    m3 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)+Belt +(1|site)+(1|species),  data = d)
   
 	# >2000
-	m4 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt + (1|mean_year) +(1|site)+(1|species),  data = d[d$mean_year>2000,])
+	m4 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt +(1|site)+(1|species),  data = d[d$mean_year>2000,])
 	
 	# >2000 & only Arctic and N. Temperate
-	m5 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt + (1|mean_year) +(1|site)+(1|species),  data = d[d$mean_year>2000 & d$Belt%in%c('North temperate','Arctic'),])
+	m5 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt +(1|site)+(1|species),  data = d[d$mean_year>2000 & d$Belt%in%c('North temperate','Arctic'),])
 	
 	# only Arctic and N. Temperate
-	m6 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt + (1|mean_year) +(1|site)+(1|species),  data = d[d$Belt%in%c('North temperate','Arctic'),])
+	m6 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt +(1|site)+(1|species),  data = d[d$Belt%in%c('North temperate','Arctic'),])
 	
 	# model assumptions
 	m_ass(name = 'DPR_year+Belt', mo = m0, dat = d, fixed = c('N_nests','mean_year'),categ = 'Belt', trans = c('log','none','none'), spatial = TRUE, temporal = TRUE, PNG = TRUE)
@@ -60,22 +63,22 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 		sum(bsim@fixef[,c('poly(mean_year, 2)2:BeltNorth temperate')]>0)/nsim #	bsim@fixef[6,7]
 # TPR
 	# simple	
-     m0 = lmer(TPR ~ log( N_nests) + mean_year+Belt + (1|mean_year) +(1|site)+(1|species),  data = d)  
+     m0 = lmer(TPR ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d)  
    
 	# interaction linear
-    m1 = lmer(TPR ~ log( N_nests) + mean_year*Belt + (1|mean_year) +(1|site)+(1|species),  data = d)
+    m1 = lmer(TPR ~ log( N_nests) + mean_year*Belt +(1|site)+(1|species),  data = d)
  
     # interaction 2nd polynomial
-    m2 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)*Belt + (1|mean_year) +(1|site)+(1|species),  data = d)
+    m2 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)*Belt +(1|site)+(1|species),  data = d)
 	
 	# simple 2nd polynomial
-    m3 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)+Belt + (1|mean_year) +(1|site)+(1|species),  data = d)
+    m3 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)+Belt +(1|site)+(1|species),  data = d)
   
 	# >2000
-	m4 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)*Belt + (1|mean_year) +(1|site)+(1|species),  data = d[d$mean_year>2000,])
+	m4 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)*Belt +(1|site)+(1|species),  data = d[d$mean_year>2000,])
 	
 	# >2000 & only Arctic and N. Temperate
-	m5 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)*Belt + (1|mean_year) +(1|site)+(1|species),  data = d[d$mean_year>2000 & d$Belt%in%c('North temperate','Arctic'),])
+	m5 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)*Belt +(1|site)+(1|species),  data = d[d$mean_year>2000 & d$Belt%in%c('North temperate','Arctic'),])
 
 	# model assumptions
 	m_ass(name = 'TPR_year+Belt', mo = m0, dat = d, fixed = c('N_nests','mean_year'),categ = 'Belt', trans = c('log','none','none'), spatial = TRUE, temporal = TRUE, PNG = TRUE)

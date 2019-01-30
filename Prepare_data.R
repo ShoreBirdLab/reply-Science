@@ -9,8 +9,8 @@ n = n[,c("ref_num","abb_ref","locality")]
 
 # load and prepare data later shared (and added to Dryad) by Kubelka - we have split the 'species' column into two (used in Science = species, and other name species2)
 b = readWorksheetFromFile(paste(wd, 'Kubelka et al._2018_Science_additional datafile_1.xlsx',sep = ""), colTypes = 'character', sheet = "DATA")	
+b$pk =1:nrow(b)
 b = b[order(b$species,b$Latitude, b$mean_year),]
-
  # assign citation number
  b$source_id = NA
  b$source_id = as.character(b$source_id)
@@ -22,19 +22,19 @@ b = b[order(b$species,b$Latitude, b$mean_year),]
 	}
 #b[is.na(b$source_id),]	
 
-b$DPRtrans[b$pk == 23]='NO' # correct a typo - the estimate for this nest was not transformed by Kubelka et al 
 b$obs_time = as.numeric(b$obs_time)
 b$Incubation_days = as.numeric(b$Incubation_days)
 b$predated = as.numeric(b$predated)
 b$hatched = as.numeric(b$hatched)
 b$infertile = as.numeric(b$infertile)
+b$other_failed = as.numeric(b$other_failed)
 b$Latitude = as.numeric(b$Latitude)
 b$mean_year = as.numeric(b$mean_year)
 b$DPR_orig = as.numeric(b$DPR_orig)
 b$Exposure_days = as.numeric(b$Exposure_days)
 b$N_nests = as.numeric(b$N.nests)
 b$"Failed_together." = as.numeric(b$"Failed_together.")
-b$other_failed = as.numeric(b$other_failed)
+
 
 b$site = paste(b$Latitude,b$Longitude) # define site
 b$lat_abs = abs(b$Latitude) # abs latitude

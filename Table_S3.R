@@ -20,7 +20,7 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
      m1 = lmer(log(DPR) ~ log( N_nests) + hemisphere*scale(mean_year)*lat_abs +(1|site)+(1|species),  data = d)
 	
 	# simple 2nd polynomial
-    m2 = lmer(log(DPR) ~ log( N_nests) +hemisphere+ scale(mean_year)+poly(lat_abs,2) +(1|site)+(1|species),  data = d) 
+     m2 = lmer(log(DPR) ~ log( N_nests) +hemisphere+ scale(mean_year)+poly(lat_abs,2) +(1|site)+(1|species),  data = d) 
 	#m = lmer(log(DPR) ~ log( N_nests) + hemisphere+ scale(mean_year)+poly(lat_abs,2)+(1|site)+(1|species),  data = d[d$mean_year>1970,])  
 	#m = lmer(log(DPR) ~ log( N_nests) + hemisphere+ scale(mean_year)+poly(lat_abs,2)+(1|site)+(1|species),  data = d[d$DPR_trans=='NO',])  
 	#m = lmer(log(DPR) ~ log( N_nests) + hemisphere+ scale(mean_year)+poly(lat_abs,2)+(1|site)+(1|species),  data = d[d$years_nr<11 & d$mean_year>1970,])  
