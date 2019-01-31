@@ -227,7 +227,7 @@ layout.show(n=9)
   text(x = c(2003), y =0.157-(4)*0.06923077*0.157, labels= substitute(paste("(",italic('B'), ")", sep="")), col='grey18', cex = 0.5, adj = 1)
   #text(x = c(2005), y =0.157-(2)*0.06923077*0.157, labels= c('Observed\nnesting\nperiod'), col='grey18', cex = 0.5, adj = 1)
   for(i in 1:length(seq(0.1,0.9,by=0.1))){
-			text(x = 2016, y =0.157-(i)*0.06923077*0.157, labels= seq(0.1,0.9,by=0.1)[i], col=cols[i], cex = 0.5, adj = 1)
+			text(x = 2013, y =0.157-(i)*0.06923077*0.157, labels= seq(0.1,0.9,by=0.1)[i], col=cols[i], cex = 0.5, adj = 1)
 			}
   text(x = 2016, y =0.16*0.98, labels= expression(bold("H")), col='black', cex = 0.7, xpd = TRUE)		
 for(i in 1: length(seq(0.1,0.9, by = 0.1))){
@@ -267,10 +267,10 @@ print(i)
 # I
  par(mar=c(0.1,2.5,1,0),ps=12, cex=1, font.main = 1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=FALSE)
  #par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
- plot(u$N_nests~u$DPR_orig, pch=19,xlim=c(0,0.2), ylim=c(0,0.8),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')  
+ plot(u$N_nests~u$DPR_orig, pch=19,xlim=c(0,0.2), ylim=c(0,0.2),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')  
   axis(1, at=seq(0,0.2,by = 0.05),labels=seq(0,0.20,by = 0.05),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
 	mtext('True daily nest predation',side=1,line=0.2, cex=0.6, las=1, col = 'black')
-  axis(2, at=seq(0,0.8, by = 0.2), labels=seq(0,0.8, by = 0.2), lwd = 0.5)
+  axis(2, at=seq(0,0.2,by = 0.05),labels=seq(0,0.20,by = 0.05), lwd = 0.5)
 			mtext('Estimated daily nest predation',side=2,line=1.1, cex=0.6, las=3, col='black')
   
   #text(x = 0.25, y =0.75, labels= c('Beintema:'), col='grey18', cex = 0.5, adj = 1)
@@ -293,7 +293,7 @@ for(i in c(5,6,9)){
 	print(r)
 	}
 abline(0,1, lwd = 1, lty = 3, col = 'black', xpd=FALSE)
-text(x = 0.2, y =0.8*0.98, labels= expression(bold("I")), col='black', cex = 0.7, xpd = TRUE)	
+text(x = 0.2, y =0.2*0.98, labels= expression(bold("I")), col='black', cex = 0.7, xpd = TRUE)
  
 if(PNG == TRUE) {dev.off()}
 

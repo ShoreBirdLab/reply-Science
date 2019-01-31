@@ -216,7 +216,7 @@ a$upr = ifelse(a$upr>100,100,a$upr)
   a$n = 1
   ddr = ddply(a,('int'), summarise, med = median (trans),mea = mean(trans), n = sum(n))	
   ddr5 = ddply(a,('int5'), summarise, med = median (trans),mea = mean(trans), n = sum(n))	
-	
+  ddr5$int5[ ddr5$int5 == 2016] = 2015	
 	
 # DD sensitivity (within text)
  
