@@ -45,7 +45,7 @@ layout(mat = matrix(c(1,2,3,4,
   axis(1, at=c(1944,1960,1980,2000,2016),labels=NA,cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
  # axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
 	#mtext('Year',side=1,line=0.3, cex=0.6, las=1, col='grey30')
-  axis(2, at=seq(0,0.07, by = 0.01), labels=c('0.00','0.01','0.02','0.03','0.04','0.05','0.06','0.07'), lwd = 0.5)
+  axis(2, at=seq(0,0.07, by = 0.01), labels=c('0','0.01','0.02','0.03','0.04','0.05','0.06','0.07'), lwd = 0.5)
 	#mtext('Daily nest predation',side=2,line=1.1, cex=0.6, las=3, col = 'black')
   text(x = 2016, y =0.07*0.98, labels= expression(bold("A")), col='black', cex = 0.7,  xpd = TRUE)
   #mtext(expression(bold("A")),col='black', cex = 0.7,  side = 2, line=-0.5, padj = -7.25)
@@ -72,7 +72,7 @@ layout(mat = matrix(c(1,2,3,4,
   
   axis(1, at=c(1944,1960,1980,2000,2016),labels=NA,cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
 	#mtext('Year',side=1,line=0.2, cex=0.6, las=1, col = 'black')
-  axis(2, at=seq(0,0.07, by = 0.01), labels=c('0.00','0.01','0.02','0.03','0.04','0.05','0.06','0.07'), lwd = 0.5)
+  axis(2, at=seq(0,0.07, by = 0.01), labels=c('0','0.01','0.02','0.03','0.04','0.05','0.06','0.07'), lwd = 0.5)
 	mtext('Daily nest predation',side=2,line=1.1, cex=0.6, las=3, col = 'black')
   text(x = 2016, y =0.07*0.98, labels= expression(bold("B")), col='black', cex = 0.7, xpd = TRUE)
   for(i in unique(pp$Belt)){
@@ -92,7 +92,7 @@ layout(mat = matrix(c(1,2,3,4,
   
   axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
 	mtext('Year',side=1,line=0.2, cex=0.6, las=1, col = 'black')
-  axis(2, at=seq(0,0.07, by = 0.01), labels=c('0.00','0.01','0.02','0.03','0.04','0.05','0.06','0.07'), lwd = 0.5)
+  axis(2, at=seq(0,0.07, by = 0.01), labels=c('0','0.01','0.02','0.03','0.04','0.05','0.06','0.07'), lwd = 0.5)
 	#mtext('Daily nest predation',side=2,line=1.1, cex=0.6, las=3, col = 'black')
   text(x = 2016, y =0.07*0.98, labels= expression(bold("C")), col='black', cex = 0.7,  xpd = TRUE)
   for(i in unique(pp$Belt)){
@@ -207,11 +207,11 @@ layout(mat = matrix(c(1,2,3,4,
   symbols((ddr5$int5),(ddr5$mea)*100, circles=sqrt(ddr5$n/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE) 
   #mtext(expression(bold("D")),col='black', cex = 0.7,  side = 2, line=-0.5, padj = -7.25)	
 	
-  text(x = c(1950), y =c(35), labels= substitute(paste(italic('N'), " populations:", sep="")), col='grey18', cex = 0.5, xpd = TRUE, adj = 0)
+  text(x = c(1950), y =c(37), labels= substitute(paste(italic('N'), " populations:", sep="")), col='grey18', cex = 0.5, xpd = TRUE, adj = 0)
 	#symbols(c(1950,1960,1970, 1900),c(20,20,20,-20), circles=sqrt(c(10, 20,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
-  symbols(c(1970,1970, 1970, 1900),c(27,17.5,5,-20), circles=sqrt(c(5, 15,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
+  symbols(c(1970,1970, 1970, 1900),c(29,19.5,7,-20), circles=sqrt(c(5, 15,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
 		
-	text(x = c(1970,1970, 1970, 1900)+9,c(27,17.5,5,-20), labels= c(5,15,30,10), col='grey18', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+	text(x = c(1970,1970, 1970, 1900)+9,c(29,19.5,7,-20), labels= c(5,15,30,10), col='grey18', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
 	
 	#symbols(c(1970,1970, 1970, 1900),c(5,13,25,-20), circles=sqrt(c(10, 20,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
 	
@@ -230,7 +230,7 @@ layout(mat = matrix(c(1,2,3,4,
   
   axis(1, at=c(1944,1960,1980,2000,2016),labels=c(1944,1960,1980,2000,2016),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
 	mtext('Year',side=1,line=0.2, cex=0.6, las=1, col = 'black')
-  axis(2, at=seq(0,0.16, by = 0.02), labels=c("0.00","0.02","0.04","0.06","0.08","0.10","0.12","0.14","0.16"), lwd = 0.5)
+  axis(2, at=seq(0,0.16, by = 0.02), labels=c("0","0.02","0.04","0.06","0.08","0.10","0.12","0.14","0.16"), lwd = 0.5)
      mtext('Daily nest predation',side=2,line=1.1, cex=0.6, las=3, col='black')
   text(x = c(2003), y =0.157-(1)*0.06923077*0.157, labels= c('Observed'), col='grey18', cex = 0.5, adj = 1)
   text(x = c(2003), y =0.157-(2)*0.06923077*0.157, labels= c('nesting'), col='grey18', cex = 0.5, adj = 1)
@@ -280,22 +280,22 @@ print(i)
  par(mar=c(0.1,2.3,1,0),ps=12, cex=1, font.main = 1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=FALSE)
  #par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.35,0), las=1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)
  plot(u$N_nests~u$DPR_orig, pch=19,xlim=c(0,0.2), ylim=c(0,0.2),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')  
-  axis(1, at=seq(0,0.2,by = 0.05),labels=c('0.00','0.05','0.10','0.15','0.20'),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
+  axis(1, at=seq(0,0.2,by = 0.05),labels=c('0','0.05','0.10','0.15','0.20'),cex.axis=0.5,mgp=c(0,-0.35,0), lwd = 0.5)
 	mtext('True daily nest predation',side=1,line=0.2, cex=0.6, las=1, col = 'black')
-  axis(2, at=seq(0,0.2,by = 0.05),labels=c('0.00','0.05','0.10','0.15','0.20'), lwd = 0.5)
+  axis(2, at=seq(0,0.2,by = 0.05),labels=c('0','0.05','0.10','0.15','0.20'), lwd = 0.5)
 			mtext('Estimated daily nest predation',side=2,line=1.1, cex=0.6, las=3, col='black')
   
   #text(x = 0.25, y =0.75, labels= c('Beintema:'), col='grey18', cex = 0.5, adj = 1)
   #for(i in 1:length(seq(0.1,0.9,by=0.1))){
 	#		text(x = 0.25, y =0.75-(i)*0.06923077*0.75, labels= seq(0.1,0.9,by=0.1)[i], col=cols[i], cex = 0.5, adj = 1)
 	#		}	
-  text(x = c(0.055), y =0.20-(1)*0.06923077*0.20, labels= c('Observed'), col='grey18', cex = 0.5, adj = 1)
-  text(x = c(0.055), y =0.20-(2)*0.06923077*0.20, labels= c('nesting'), col='grey18', cex = 0.5, adj = 1)
-  text(x = c(0.055), y =0.20-(3)*0.06923077*0.20, labels= c('period'), col='grey18', cex = 0.5, adj = 1)
-  text(x = c(0.055), y =0.20-(4)*0.06923077*0.20, labels= substitute(paste("(",italic('B'), ")", sep="")), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07), y =0.20-(1)*0.06923077*0.20, labels= c('Observed'), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07), y =0.20-(2)*0.06923077*0.20, labels= c('nesting'), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07), y =0.20-(3)*0.06923077*0.20, labels= c('period'), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07), y =0.20-(4)*0.06923077*0.20, labels= substitute(paste("(",italic('B'), ")", sep="")), col='grey18', cex = 0.5, adj = 1)
   #text(x = c(2005), y =0.157-(2)*0.06923077*0.157, labels= c('Observed\nnesting\nperiod'), col='grey18', cex = 0.5, adj = 1)
   for(i in 1:length(c(0.5,0.6,0.9))){
-			text(x =0.06, y =0.20-(i)*0.06923077*0.20, labels= c(0.5,0.6,0.9)[i], col=cols[c(5,6,9)][i], cex = 0.5, adj = 0)
+			text(x =0.08, y =0.20-(i)*0.06923077*0.20, labels= c(0.5,0.6,0.9)[i], col=cols[c(5,6,9)][i], cex = 0.5, adj = 0)
 			}	
 
 for(i in c(5,6,9)){
