@@ -16,14 +16,14 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 # TABLE S2 - control for year and study site
 # DPR
 	# simple	
-     m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d)  
+     m0 = lmer(log(DPR) ~ log( N_nests) + scale(mean_year)+Belt   +(1|site)+(1|species),  data = d)  
 		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$mean_year>1970,])  
 		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$DPR_trans=='NO',])  
 		#m0 = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$DPR_trans=='NO' & d$mean_year>1970,])  
 		#m = lmer(log(DPR) ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d[d$years_nr<11 & d$mean_year>1970,])   
 		
 	# interaction linear
-    m1 = lmer(log(DPR) ~ log( N_nests) + mean_year*Belt +(1|site)+(1|species),  data = d)
+    m1 = lmer(log(DPR) ~ log( N_nests) + scale(mean_year)*Belt +(1|site)+(1|species),  data = d)
  
     # interaction 2nd polynomial
     m2 = lmer(log(DPR) ~ log( N_nests) + poly(mean_year,2)*Belt + (1|site)+(1|species),  data = d)
@@ -63,10 +63,10 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 		sum(bsim@fixef[,c('poly(mean_year, 2)2:BeltNorth temperate')]>0)/nsim #	bsim@fixef[6,7]
 # TPR
 	# simple	
-     m0 = lmer(TPR ~ log( N_nests) + mean_year+Belt   +(1|site)+(1|species),  data = d)  
+     m0 = lmer(TPR ~ log( N_nests) + scale(mean_year)+Belt   +(1|site)+(1|species),  data = d)  
    
 	# interaction linear
-    m1 = lmer(TPR ~ log( N_nests) + mean_year*Belt +(1|site)+(1|species),  data = d)
+    m1 = lmer(TPR ~ log( N_nests) + scale(mean_year)*Belt +(1|site)+(1|species),  data = d)
  
     # interaction 2nd polynomial
     m2 = lmer(TPR ~ log( N_nests) + poly(mean_year,2)*Belt +(1|site)+(1|species),  data = d)

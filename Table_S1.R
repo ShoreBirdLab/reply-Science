@@ -14,7 +14,7 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 # TABLE S1AB- testing for the difference between belts using same model as Kubelka and comparing it with lmer output
 # DPR 
   # using Kubelka et al model from their Table S2A
-    Model_1 = lmekin( log(DPR) ~ (1|species ) + log( N_nests)+ mean_year*Belt  , varlist = list( I, phyloMat , distanceMatrix ), data = d )
+    Model_1 = lmekin( log(DPR) ~ (1|species ) + log( N_nests)+ scale(mean_year)*Belt  , varlist = list( I, phyloMat , distanceMatrix ), data = d )
 	oi=data.frame(model='S2+int',type='fixed',effect=names(fixef(Model_1)),estimate=fixef(Model_1), lwr=fixef(Model_1)-1.96*extractSE(Model_1), upr=fixef(Model_1)+1.96*extractSE(Model_1))
 			rownames(oi) = NULL
 			oi$estimate_r=round(oi$estimate,3)
@@ -26,12 +26,13 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 	oo=rbind(oii,ri)
 	
   # using lmer package gives same results
-    m = lmer(log(DPR) ~ log( N_nests) + mean_year*Belt +(1|species),  data = d)  
+    m = lmer(log(DPR) ~ log( N_nests) + scale(mean_year)*Belt +(1|species),  data = d)  
 	om = m_out(name = "lmer", model = m, round_ = 3, nsim = 5000, aic = FALSE)
-
+	m_ass(name = 'S1B_DPR_year-Belt', mo = m, dat = d, fixed = c('N_nests','mean_year'),categ = 'Belt', trans = c('log','none','none'), spatial = TRUE, temporal = TRUE, PNG = TRUE)
+	
 # TPR 
   # using Kubelka et al model from their Table S2A
-    Model_7 = lmekin( TPR ~ (1|species ) + log( N_nests)+ mean_year*Belt  , varlist = list( I, phyloMat , distanceMatrix ), data = d )
+    Model_7 = lmekin( TPR ~ (1|species ) + log( N_nests)+ scale(mean_year)*Belt  , varlist = list( I, phyloMat , distanceMatrix ), data = d )
 	oi=data.frame(model='S2+int',type='fixed',effect=names(fixef(Model_7)),estimate=fixef(Model_7), lwr=fixef(Model_7)-1.96*extractSE(Model_7), upr=fixef(Model_7)+1.96*extractSE(Model_7))
 			rownames(oi) = NULL
 			oi$estimate_r=round(oi$estimate,3)
@@ -43,9 +44,9 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 	ot=rbind(oii,ri)
  
    # using lmer package gives same results)
-    m = lmer(TPR ~ log( N_nests) + mean_year*Belt +(1|species),  data = d)  
+    m = lmer(TPR ~ log( N_nests) + scale(mean_year)*Belt +(1|species),  data = d)  
 	omt = m_out(name = "lmer", model = m, round_ = 3, nsim = 5000, aic = FALSE)	
-
+	m_ass(name = 'S1B_TPR_year-Belt', mo = m, dat = d, fixed = c('N_nests','mean_year'),categ = 'Belt', trans = c('log','none','none'), spatial = TRUE, temporal = TRUE, PNG = TRUE)
 # TABLE S1BC- testing for the difference between hemisphere,latitude and year using same model as Kubelka and comparing it with lmer output
 # DPR 
   # using Kubelka et al model from their Table S6A
@@ -62,10 +63,10 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
   # using lmer package	(same results)	
     m = lmer(log(DPR) ~ log( N_nests) + hemisphere*scale(mean_year)*scale(abs(Latitude)) +(1|species),  data = d)  
 	oml = m_out(name = "lmer", model = m, round_ = 3, nsim = 5000, aic = FALSE)
-	
+	m_ass(name = 'S1D_DPR_hem-year-absLat', mo = m, dat = d, fixed = c('N_nests','mean_year','Latitude'),categ = 'hemisphere', trans = c('log','none','none'), spatial = TRUE, temporal = TRUE, PNG = TRUE)
 # TPR 
   # using Kubelka et al model from their Table S6A
-	model_y <- lmekin( TPR ~ (1|species) + log( N_nests) + scale(mean_year)*scale(abs( Latitude )), varlist = list( I, phyloMat, distanceMatrix), data = d )
+	model_y <- lmekin( TPR ~ (1|species) + log( N_nests) + hemisphere*scale(mean_year)*scale(abs( Latitude )), varlist = list( I, phyloMat, distanceMatrix), data = d )
 	oi=data.frame(model='S6+int',type='fixed',effect=names(fixef(model_y)),estimate=fixef(model_y), lwr=fixef(model_y)-1.96*extractSE(model_y), upr=fixef(model_y)+1.96*extractSE(model_y))
 			rownames(oi) = NULL
 			oi$estimate_r=round(oi$estimate,3)
@@ -76,9 +77,9 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 	olt=rbind(oii,ri)
   
   # using lmer package	(same results)	
-    m = lmer(TPR ~ log( N_nests) + scale(mean_year)*scale(abs(Latitude)) +(1|species),  data = d)  
+    m = lmer(TPR ~ log( N_nests) + hemisphere*scale(mean_year)*scale(abs(Latitude)) +(1|species),  data = d)  
 	omlt = m_out(name = "lmer lat", model = m, round_ = 3, nsim = 5000, aic = FALSE)	
-		
+	m_ass(name = 'S1D_TPR_hem-year-absLat', mo = m, dat = d, fixed = c('N_nests','mean_year','Latitude'),categ = 'hemisphere', trans = c('log','none','none'), spatial = TRUE, temporal = TRUE, PNG = TRUE)	
 # EXPORT model outputs
   sname = tempfile(fileext='.xls')
   wb = loadWorkbook(sname,create = TRUE)	

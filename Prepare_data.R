@@ -4,7 +4,7 @@ trees1 = lapply(trees, function( t ) addInTip( t , "Charadrius_alexandrinus","Ch
 trees2 = lapply( trees1, function( t ) addInTip( t , "Gallinago_gallinago", "Gallinago_delicata") ) 
 
 # load citation data
-n = readWorksheetFromFile(paste(wd, 'literature_check.xlsx',sep = ""), colTypes = 'character', sheet = "Data")	
+n = readWorksheetFromFile(paste(wd, 'sources.xlsx',sep = ""), colTypes = 'character', sheet = "Data")	
 n = n[,c("ref_num","abb_ref","locality")]
 
 # load and prepare data later shared (and added to Dryad) by Kubelka - we have split the 'species' column into two (used in Science = species, and other name species2)

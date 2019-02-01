@@ -13,7 +13,9 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
 		line_col = c("#72c5c9","#9c9c9c","#bf786b","#729f44","#e7629c"),
 		#line_col = c("lightseagreen","dimgray","brown","darkolivegreen","deeppink3"),
 		poly_col = c("paleturquoise1","gainsboro","navajowhite2","darkolivegreen3","lightpink"),
-		year_col = brewer.pal(n = 9, name = "Blues")[c(3,4,5,7,9)],#[c(5,6,7,8,9)],#
+		year_col = brewer.pal(n = 9, name = "Blues")[c(3,4,5,7,9)], #c('#e4d5de','#c5a6b9','#a67794','#7c516c','#4d3243'),#c('#D8C6D1','#CEB7C6','#BB9AAF','#A77E98','#946181'),#brewer.pal(n = 9, name = "Blues")[c(3,4,5,7,9)],#[c(5,6,7,8,9)],#
+		#year_col = c('#5B6EA3','#866489','#B05B70','#DB5156','#F74B45'),#c('#D8C6D1','#CEB7C6','#BB9AAF','#A77E98','#946181'),
+		#[c(5,6,7,8,9)],#
 		stringsAsFactors=FALSE
 		)
 	
