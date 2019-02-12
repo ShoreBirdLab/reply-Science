@@ -10,7 +10,25 @@ n = n[,c("ref_num","abb_ref","locality")]
 # load and prepare data later shared (and added to Dryad) by Kubelka - we have split the 'species' column into two (used in Science = species, and other name species2)
 b = readWorksheetFromFile(paste(wd, 'Kubelka et al._2018_Science_additional datafile_1.xlsx',sep = ""), colTypes = 'character', sheet = "DATA")	
 b$pk =1:nrow(b)
+# adjust inconsistencies between the initial (DATApopulations.csv) and additional Kubelka's file and to match our newly extracted data
+b$References.and.notes[b$pk %in% c(3,102)] = "Dolanský & Ždárek 2001"
+b$References.and.notes[b$pk == 166] = "Sladecek et al in litt"
+b$species2=b$species
+b$species2[b$pk == 63] = "Tringa semipalmata"
+b$species2[b$pk == 76] = "Haematopus_finschi"
+b$species2[b$pk == 194] = "Phalaropus tricolor"
+b$species2[b$pk == 195] = "Phalaropus tricolor"
+
+b$species[b$pk == 63] = "Catoptrophorus_semipalmatus"
+b$species[b$pk == 98] = "Charadrius_obscurus"
+b$species[b$pk == 194] = "Steganopus_tricolor"
+b$species[b$pk == 195] = "Steganopus_tricolor"
+b$species[b$pk == 219] = "Vanellus_miles"
+b$species[b$pk == 217] = "Vanellus_miles"
+b$species[b$pk == 218] = "Vanellus_miles"
+
 b = b[order(b$species,b$Latitude, b$mean_year),]
+
  # assign citation number
  b$source_id = NA
  b$source_id = as.character(b$source_id)
