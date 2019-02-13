@@ -4,6 +4,8 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
 
 # CONSTANTS
   nsim = 5000
+  recent = '#B2182B'
+  historic = '#4393C3'
   col_p="gray53"  # color of point's outline
   col_pb="gray98"  # color of point's background	
   col_ = data.frame(

@@ -114,7 +114,7 @@
 			for(i in 1:nsim) predmatrix[,i] <- X%*%bsim@fixef[i,]
 					newD$lwr <- apply(predmatrix, 1, quantile, prob=0.025)
 					newD$upr <- apply(predmatrix, 1, quantile, prob=0.975)
-			newD$line_col = newD$line_col = ifelse(newD$period_orig == 'before 2000','#5b6ea3', '#f74b45')
+			newD$line_col = newD$line_col = ifelse(newD$period_orig == 'before 2000',historic, recent)
 	dprAA=newD
 	
 # Fig1BB DPR

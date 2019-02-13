@@ -18,7 +18,7 @@ source(paste(wd, 'Prepare_predictions_Fig1.R',sep="")) # generates 18 warnings, 
 summary(factor(d$DPR_trans))
 # plot
 if(PNG == TRUE) {
-   png(paste(outdir,"Figure_1panels9.png", sep=""), width=3*1.6,height=3*1.45,units="in",res=600) 
+   png(paste(outdir,"Figure_1panels9_col.png", sep=""), width=3*1.6,height=3*1.45,units="in",res=600) 
 	}else{dev.new(width=3*1.6,height=3*1.45)
   }
 #par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1,  tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)  
@@ -128,8 +128,8 @@ layout(mat = matrix(c(1,2,3,4,
 							lines(ppi$Latitude, exp(ppi$pred)-0.01, col=ppi$line_col,lwd=1)
 						}	
 	#text(x = c(-80), y =0.058, labels= 'Period:', col='grey30', cex = 0.5, adj = 0)
-	text(x = c(-80), y =0.063, labels= 'Historic (1944-1999)', col='#5b6ea3', cex = 0.5, adj = 0)		
-	text(x = c(-80), y =0.068, labels= 'Recent (2000-2016)', col='#f74b45', cex = 0.5, adj = 0)		
+	text(x = c(-80), y =0.063, labels= 'Historic (1944-1999)', col=historic, cex = 0.5, adj = 0)		
+	text(x = c(-80), y =0.068, labels= 'Recent (2000-2016)', col=recent, cex = 0.5, adj = 0)		
     
 # E interaction
   pp = dprBB
