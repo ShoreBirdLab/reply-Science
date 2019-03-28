@@ -87,7 +87,7 @@
 			newD$line_col = col_$line_col[match(newD$Belt, col_$Belt)]
 	dprC=newD		
 	
-# Fig1AA DPR
+# Fig1D DPR
     dd =d
 		m <- lmer(log(DPR) ~ ln_N_nests + poly(Latitude,3)*period_orig + (1|mean_year) +(1|site)+(1|species),  data =dd )
 		nsim <- 5000
@@ -117,7 +117,7 @@
 			newD$line_col = newD$line_col = ifelse(newD$period_orig == 'before 2000',historic, recent)
 	dprAA=newD
 	
-# Fig1BB DPR
+# Fig1E DPR
     dd =d
 		m <- lmer(log(DPR) ~ ln_N_nests + poly(Latitude,3)+scale(mean_year) + (1|mean_year) +(1|site)+(1|species),  data =dd )
 		nsim <- 5000
@@ -147,7 +147,7 @@
 			newD$line_col = col_$year_col[match(newD$mean_year, col_$year_)]
 	dprBB=newD
 
-# Fig1CC DPR	
+# Fig1F DPR	
 	dd =d[d$DPR_trans == "NO",]
 		m <- lmer(log(DPR) ~ ln_N_nests + poly(Latitude,3)*scale(mean_year) + (1|mean_year) +(1|site)+(1|species),  data =dd )
 		nsim <- 5000
@@ -177,7 +177,7 @@
 			newD$line_col = col_$year_col[match(newD$mean_year, col_$year_)]	
 		dprCC=newD	
 			
-# D loess
+# G loess
 # proportion of transfomred
 a = d[order(d$mean_year),]
 a$trans = ifelse(a$DPR_trans == 'YES',1,0)
@@ -190,6 +190,16 @@ a$upr = ifelse(a$upr>100,100,a$upr)
 		#ggplot(d,aes(x= mean_year, y = trans))+stat_smooth() + ylab('Beintam used (yes = 1, no = 0)')								
 		#ggsave(paste(outdir,"Figure_1G.png", sep=""),width=1.85*2, height=1.85*2, units='in',dpi=600)
 		#ggplot(d,aes(x= mean_year, y = trans, col = Belt))+stat_smooth(se = F) + ylab('Beintam used (yes = 1, no = 0)')	
+# arctic proportion of transformed
+ac = d[order(d$mean_year) & d$Belt == 'Arctic',]
+ac$trans = ifelse(ac$DPR_trans == 'YES',1,0)
+plx<-predict(loess(trans*100~mean_year,ac), se=T)
+ac$fit = plx$fit
+df_ =plx$df
+ac$lwr = (plx$fit - qt(0.975,df_)*plx$se)
+ac$upr = (plx$fit + qt(0.975,df_)*plx$se)
+ac$upr = ifelse(a$upr>100,100,ac$upr)
+		
 # raw data
   a$int = ifelse(a$mean_year<1945, 1940, ifelse(a$mean_year<1955, 1950, ifelse(a$mean_year<1965, 1960, ifelse(a$mean_year<1975, 1970, ifelse(a$mean_year<1985,1980, ifelse(a$mean_year<1995, 1990, ifelse(a$mean_year<2005, 2000, 2010)))))))
   
@@ -200,9 +210,9 @@ a$upr = ifelse(a$upr>100,100,a$upr)
   ddr5 = ddply(a,('int5'), summarise, med = median (trans),mea = mean(trans), n = sum(n))	
   ddr5$int5[ ddr5$int5 == 2016] = 2015	
 	
-# DD sensitivity (within text)
+# H -  sensitivity (within text)
  
-# Beintema effects
+# I - Beintema effects
 #g[,c('obs_time','N.nests','other_failed','predated','infertile','hatched')]
 
 u=b[b$DPRtrans=='NO',]
