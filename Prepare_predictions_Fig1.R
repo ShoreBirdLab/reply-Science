@@ -178,24 +178,6 @@
 		dprCC=newD	
 			
 # D loess
-d$trans = ifelse(d$DPR_trans == 'YES',1,0)
-d = d[order(d$mean_year),]
-plx<-predict(loess(trans*100~mean_year,d), se=T)
-lwr = (plx$fit - qt(0.975,plx$df)*plx$se)
-upr = (plx$fit + qt(0.975,plx$df)*plx$se)
-upr = ifelse(upr>100,100,upr)
-		#ggplot(d,aes(x= mean_year, y = trans))+stat_smooth() + ylab('Beintam used (yes = 1, no = 0)')								
-		#ggsave(paste(outdir,"Figure_1G.png", sep=""),width=1.85*2, height=1.85*2, units='in',dpi=600)
-		#ggplot(d,aes(x= mean_year, y = trans, col = Belt))+stat_smooth(se = F) + ylab('Beintam used (yes = 1, no = 0)')	
-# raw data
-  d$int = ifelse(d$mean_year<1945, 1940, ifelse(d$mean_year<1955, 1950, ifelse(d$mean_year<1965, 1960, ifelse(d$mean_year<1975, 1970, ifelse(d$mean_year<1985,1980, ifelse(d$mean_year<1995, 1990, ifelse(d$mean_year<2005, 2000, 2010)))))))
-  
-  d$int5 = ifelse(d$mean_year<1943, 1940, ifelse(d$mean_year<1948, 1945,ifelse(d$mean_year<1953, 1950,ifelse(d$mean_year<1958, 1955, ifelse(d$mean_year<1963, 1960, ifelse(d$mean_year<1968, 1965, ifelse(d$mean_year<1973, 1970, ifelse(d$mean_year<1978, 1975, ifelse(d$mean_year<1983,1980, ifelse(d$mean_year<1988,1985, ifelse(d$mean_year<1993, 1990, ifelse(d$mean_year<1998, 1995, ifelse(d$mean_year<2003, 2000, ifelse(d$mean_year<2008, 2005,  ifelse(d$mean_year<2013, 2010, 2016)))))))))))))))
-  
-  d$n = 1
-  ddr = ddply(d,('int'), summarise, med = median (trans),mea = mean(trans), n = sum(n))	
-  ddr5 = ddply(d,('int5'), summarise, med = median (trans),mea = mean(trans), n = sum(n))	
-  
 # proportion of transfomred
 a = d[order(d$mean_year),]
 a$trans = ifelse(a$DPR_trans == 'YES',1,0)
