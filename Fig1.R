@@ -18,7 +18,7 @@ source(paste(wd, 'Prepare_predictions_Fig1.R',sep="")) # generates 18 warnings, 
 summary(factor(d$DPR_trans))
 # plot
 if(PNG == TRUE) {
-   png(paste(outdir,"Figure_1panels9_col.png", sep=""), width=3*1.6,height=3*1.45,units="in",res=600) 
+   png(paste(outdir,"Figure_1rev_points_co3_allAR.png", sep=""), width=3*1.6,height=3*1.45,units="in",res=600) 
 	}else{dev.new(width=3*1.6,height=3*1.45)
   }
 #par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1,  tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)  
@@ -54,7 +54,7 @@ layout(mat = matrix(c(1,2,3,4,
 						 print(i)
 						 ppi = pp[pp$Belt==i,]
 							polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr)-0.01, 
-								rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+								rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.1))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
 							
 							lines(ppi$mean_year, exp(ppi$pred)-0.01, col=ppi$line_col,lwd=1)
 						}	
@@ -80,7 +80,7 @@ layout(mat = matrix(c(1,2,3,4,
 		print(i)
 		ppi = pp[pp$Belt==i,]
 		polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr)-0.01, 
-			rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+			rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.1))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
 		lines(ppi$mean_year, exp(ppi$pred)-0.01, col=ppi$line_col,lwd=1)
 						}	
 
@@ -100,7 +100,7 @@ layout(mat = matrix(c(1,2,3,4,
 		print(i)
 		ppi = pp[pp$Belt==i,]
 		polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(exp(ppi$lwr)-0.01, 
-			rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.2))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+			rev(exp(ppi$upr)-0.01)), border=NA, col = adjustcolor(ppi$line_col,alpha.f = 0.1))#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
 		lines(ppi$mean_year, exp(ppi$pred)-0.01, col=ppi$line_col,lwd=1)
 						}	
 						
@@ -199,32 +199,53 @@ layout(mat = matrix(c(1,2,3,4,
   text(x = 2016, y =100*0.98, labels= expression(bold("G")), col='black', cex = 0.7, xpd = TRUE)
   #text(x = 2016, y =100, labels= expression(bold("G")), col='black', cex = 0.7, adj = 0)
 	
-  polygon(c(a$mean_year, rev(a$mean_year)), c(a$lwr, 
-	  rev(a$upr)), border=NA, col = adjustcolor('black',alpha.f = 0.1), xpd = TRUE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
-  lines(a$mean_year,a$fit, col='black',lwd=1)
-		
-  #symbols((ddr$int),(ddr$mea)*100, circles=sqrt(ddr$n/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE) 
-  symbols((ddr5$int5),(ddr5$mea)*100, circles=sqrt(ddr5$n/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE) 
-  #mtext(expression(bold("D")),col='black', cex = 0.7,  side = 2, line=-0.5, padj = -7.25)	
+
+  polygon(c(ac$mean_year, rev(ac$mean_year)), c(ac$lwr, 
+	  rev(ac$upr)), border=NA, col = adjustcolor(col_$line_col[col_$Belt%in%c('Arctic')],alpha.f = 0.1), xpd = TRUE)
+	lines(ac$mean_year,ac$fit, col=col_$line_col[col_$Belt%in%c('Arctic')],lwd=1)
+  polygon(c(re$mean_year, rev(re$mean_year)), c(re$lwr, 
+	  rev(re$upr)), border=NA, col = adjustcolor(rest,alpha.f = 0.1), xpd = TRUE)
+	lines(re$mean_year,re$fit, col=rest,lwd=1)	
+  #polygon(c(a$mean_year, rev(a$mean_year)), c(a$lwr, 
+	  #rev(a$upr)), border=NA, col = adjustcolor('black',alpha.f = 0.1), xpd = TRUE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+	#lines(a$mean_year,a$fit, col='black',lwd=1)
+  
+  
+   	##for(i in unique(col_$Belt)){
+		 #i ="Arctic"
+		 #print(i)
+		#ac = d[d$Belt == i,]
+		#ac = ac[order(ac$mean_year),]
+		#plx<-predict(loess(trans*100~mean_year,ac), se=T)
+		#ac$fit = plx$fit
+		#df_ =plx$df
+		#ac$lwr = (plx$fit - qt(0.975,df_)*plx$se)
+		#ac$upr = (plx$fit + qt(0.975,df_)*plx$se)
+		#ac$upr = ifelse(ac$upr>100,100,ac$upr)		
+	 # polygon(c(ac$mean_year, rev(ac$mean_year)), c(ac$lwr, rev(ac$upr)), border=NA, col = adjustcolor(col_$line_col[col_$Belt%in%i],alpha.f = 0.1), xpd = TRUE)
+	  #lines(ac$mean_year,ac$fit, col=col_$line_col[col_$Belt%in%i],lwd=1)
+	  #lines(r$mean_year,r$fit, col=rest,lwd=1)
+		##}
+	#symbols((ddr5$int5),(ddr5$mea)*100, circles=sqrt(ddr5$n/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE) 	 
+	#symbols((ddr5ac$int5),(ddr5ac$mea)*100, circles=sqrt(ddr5ac$n/pi),inches=0.14/1.75,bg=col_pb, fg=adjustcolor(col_$line_col[col_$Belt == 'Arctic'],alpha.f = 0.7),add=TRUE) 
 	
+	symbols((acr$int5),(acr$mea)*100, circles=sqrt(acr$n/pi),inches=0.14/1.75,bg=adjustcolor(acr$col_,alpha.f = 0.1),, fg=adjustcolor(acr$col,alpha.f = 0.7),add=TRUE)
+	  
   text(x = c(1950), y =c(37), labels= substitute(paste(italic('N'), " populations:", sep="")), col='grey18', cex = 0.5, xpd = TRUE, adj = 0)
-	#symbols(c(1950,1960,1970, 1900),c(20,20,20,-20), circles=sqrt(c(10, 20,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
-  symbols(c(1970,1970, 1970, 1900),c(29,19.5,7,-20), circles=sqrt(c(5, 15,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
-		
+	symbols(c(1970,1970, 1970, 1900),c(29,19.5,7,-20), circles=sqrt(c(5, 15,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
 	text(x = c(1970,1970, 1970, 1900)+9,c(29,19.5,7,-20), labels= c(5,15,30,10), col='grey18', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
 	
-	#symbols(c(1970,1970, 1970, 1900),c(5,13,25,-20), circles=sqrt(c(10, 20,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
-	
-	#text(x = c(1970,1970, 1970, 1900)+10,c(5,15,25,-20), labels= c(10,20,30,10), col='grey18', cex = 0.5, xpd = TRUE)
-	
-	#text(x = c(1950,1960,1970), y =c(20,20,20), labels= substitute(paste(italic('N'), "populations", sep="")), col='grey18', cex = 0.5, xpd = TRUE)
+   #text(x = 1990,y = 90, labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+   #text(x = 1954,y = 75, labels= 'All', col='black', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+   
+   text(x = 1995,y = 95, labels= 'All', col='black', cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
+   text(x = 1995,y = 95*(1-0.07352941), labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
+   text(x = 1995,y = 95*(1-0.07352941*2), labels= 'Rest', col=rest, cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
 
+ 	
 # H Simulation
   cols = brewer.pal(n = 11, name = "Spectral")[c(1:5,8:11)]
-  g = b[b$DPRtrans=='NO' | (b$DPRtrans=='YES' & b$mean_year>1999),]
-  g$DPR = g$DPR_orig
-  h = b[b$DPRtrans=='YES' & b$mean_year<2000,]
-  
+    
   par(mar=c(.1,2.3,0,0),ps=12, cex=1, font.main = 1, cex.lab=0.6,cex.main=0.7, cex.axis=0.5, tcl=-0.05,bty="n",xpd=FALSE)
   plot(g$DPR~g$mean_year, pch=19,xlim=c(1944,2016), ylim=c(0,0.16),ylab=NA,xlab=NA, xaxt='n',yaxt='n', type='n')
   
@@ -243,36 +264,11 @@ layout(mat = matrix(c(1,2,3,4,
   text(x = 2016, y =0.16*0.98, labels= expression(bold("H")), col='black', cex = 0.7, xpd = TRUE)		
 for(i in 1: length(seq(0.1,0.9, by = 0.1))){
  #i=4
- r = seq(0.1,0.9, by = 0.1)[i]
- h$expMB = (r*h$Incubation_days*(h$other_failed +h$predated)/2)+(r*h$Incubation_days*(h$hatched+h$infertile))
- h$expMB = ifelse(grepl('Moit',h$'References.and.notes'),(r*h$Incubation_days*h$"Failed_together."/2)+(r*h$Incubation_days*(h$hatched+h$infertile)), h$expMB)
- h$expMB = ifelse(grepl('Favero',h$'References.and.notes'),(r*h$Incubation_days*h$"Failed_together."/2)+(r*h$Incubation_days*(h$hatched+h$infertile)), h$expMB)
- h$DPR = h$predated/h$expMB
- xx = rbind(g[,c('DPR','ln_N_nests','mean_year','species','site')],h[,c('DPR','ln_N_nests','mean_year','species','site')])
- xx$beintema = paste(100*r, '% of nesting observed', sep ='')
- 
- m = lmer(log(DPR+0.01) ~ ln_N_nests + mean_year + (1|mean_year) +(1|species)+(1|site),  data = xx)  
- #plot(allEffects(m))
- #summary(glht(m))
- bsim <- sim(m, n.sim=nsim)  
- v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
- # values to predict for		
-   newD=data.frame(ln_N_nests = mean(xx$ln_N_nests),mean_year = seq(min(xx$mean_year),max(xx$mean_year), length.out=300))
- # exactly the model which was used has to be specified here 
-   X <- model.matrix(~ ln_N_nests + mean_year,data=newD)	
- # calculate predicted values and creditability intervals
-   newD$pred <- X%*%v # #newD$fit_b <- plogis(X%*%v) # in case on binomial scaleback
-   predmatrix <- matrix(nrow=nrow(newD), ncol=nsim)
-   for(j in 1:nsim) predmatrix[,j] <- X%*%bsim@fixef[j,]
-					newD$lwr <- exp(apply(predmatrix, 1, quantile, prob=0.025))-0.01
-					newD$upr <- exp(apply(predmatrix, 1, quantile, prob=0.975))-0.01
-					newD$pred <- exp(newD$pred)-0.01
-		ppi = newD
-		ppi$upr = ifelse(ppi$upr>0.16,0.16,ppi$upr)
-		polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(ppi$lwr, 
-		  rev(ppi$upr)), border=NA, col = adjustcolor(cols[i],alpha.f = 0.2), xpd = FALSE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
-		lines(ppi$mean_year, ppi$pred, col=cols[i],lwd=1)
-print(i)
+ ppi = ppl[B == seq(0.1,0.9, by = 0.1)[i],]
+ polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(ppi$lwr, 
+ rev(ppi$upr)), border=NA, col = adjustcolor(cols[i],alpha.f = 0.1), xpd = FALSE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+lines(ppi$mean_year, ppi$pred, col=cols[i],lwd=1)
+print(B)
 	}			
 
 # I
@@ -297,7 +293,20 @@ print(i)
   for(i in 1:length(c(0.5,0.6,0.9))){
 			text(x =0.08, y =0.20-(i)*0.06923077*0.20, labels= c(0.5,0.6,0.9)[i], col=cols[c(5,6,9)][i], cex = 0.5, adj = 0)
 			}	
-
+	#text(x =0.11, y =0.20-(1)*0.06923077*0.20, labels= 'variable', col=recent, cex = 0.5, adj = 0)
+	#text(x =0.11, y =0.20-(2)*0.06923077*0.20, labels= '(original)', col=recent, cex = 0.5, adj = 0)
+# variable Author's conversion
+	#u$expMB = (u$obs_time*u$Incubation_days*(u$other_failed +u$predated)/2)+(u$obs_time*u$Incubation_days*(u$hatched+u$infertile))
+    #u$DPR_MB = u$predated/u$expMB
+	#plx = predict(loess(DPR_MB~DPR_orig,u), se=T)
+	#lwr = (plx$fit - qt(0.975,plx$df)*plx$se)
+	#upr = (plx$fit + qt(0.975,plx$df)*plx$se)
+	#polygon(c(u$DPR_orig, rev(u$DPR_orig)), c(lwr, 
+	 # rev(upr)), border=NA, col = adjustcolor(recent,alpha.f = 0.2), xpd = FALSE)
+    #lines(u$DPR_orig,plx$fit, col=recent,lwd=1)
+	
+	#points(u$DPR_orig, u$DPR_MB, col = adjustcolor(recent,alpha.f = 0.6), cex = 0.5)
+# other	
 for(i in c(5,6,9)){
 	r = seq(0.1,0.9, by =0.1)[i]
 	u$expMB = (r*u$Incubation_days*(u$other_failed +u$predated)/2)+(r*u$Incubation_days*(u$hatched+u$infertile))
@@ -312,6 +321,9 @@ for(i in c(5,6,9)){
 	
 	print(r)
 	}
+
+
+	
 lines(c(0,0.19),c(0,0.19), lwd = 1, lty = 3, col = 'black', xpd=FALSE)
 text(x = 0.2, y =0.2*0.98, labels= expression(bold("I")), col='black', cex = 0.7, xpd = TRUE)
  

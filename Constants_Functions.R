@@ -4,8 +4,11 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
 
 # CONSTANTS
   nsim = 5000
-  recent = '#B2182B'
-  historic = '#4393C3'
+  recent = brewer.pal(n = 11, name = "Spectral")[2]#'#f6423f'#"#f04e47"#"#e95a54"#'#B2182B' #'#f74b45' ##'#f6423f' ##
+  historic = "#2171B5"#"#2171B5"##"#6075b8"#"#5f72b1"#'#4393C3'# '#5b6ea3'
+  rest = "#72c5c9"# "#909e85"
+  rest_bg ="#f0f9f9"
+  arct_bg = "#fceff5"
   col_p="gray53"  # color of point's outline
   col_pb="gray98"  # color of point's background	
   col_ = data.frame(

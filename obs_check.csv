@@ -1,0 +1,231 @@
+priority,who1,who2,source_id,ref_abb,species,locality,nest_search_frequency,when_most_nests_found,comments
+1,mcragnolini,*in spanish*,57,Favero 1993,Chionis_albus,"King George Island, Nelson Island",,,
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Calidris_alpina,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Calidris_himantopus,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Calidris_melanotos,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Calidris_pusilla,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Limnodromus_scolopaceus,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Phalaropus_fulicarius,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Pluvialis_dominica,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Pluvialis_squatarola,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Tryngites_subruficollis,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,rlanctot,eweiser,58,Moitoret et al. 1996,Phalaropus_lobatus,"Kuparuk Oilfield, North Slope, Alaska",less than weekly,unknown,Nest searching was done during 3 censuses per season. Pages missing from PDF where there might be more details.
+1,eschlicht,eweiser,90,Sabine at al. 2005,Haematopus_palliatus,"Cumberland Island, Georgia",unknown,unknown,
+1,mbulla,eweiser,92,Calf and Underhill 2002,Haematopus_moquini,"Robben Island, 7 km from the coast",unknown,unknown,"6 broods found after hatching, included in totals in paper"
+1,"Cdura, done",eweiser,93,Scott et al. 2011,Haematopus_moquini,De Hoop Nature Reserve,less than weekly,unknown,
+1,jreneerkens,rlanctot,95,Beintema & Müskens 1987,Gallinago_gallinago,"The Netherlands, whole country",unknown,unknown,paper summarizes many studies conducted from 1974 to 1983
+1,jreneerkens,rlanctot,95,Beintema & Müskens 1987,Haematopus_ostralegus,"The Netherlands, whole country",unknown,unknown,paper summarizes many studies conducted from 1974 to 1983
+1,jreneerkens,rlanctot,95,Beintema & Müskens 1987,Limosa_limosa,"The Netherlands, whole country",unknown,unknown,paper summarizes many studies conducted from 1974 to 1983
+1,jreneerkens,rlanctot,95,Beintema & Müskens 1987,Philomachus_pugnax,"The Netherlands, whole country",unknown,unknown,paper summarizes many studies conducted from 1974 to 1983
+1,jreneerkens,rlanctot,95,Beintema & Müskens 1987,Recurvirostra_avosetta,"The Netherlands, whole country",unknown,unknown,paper summarizes many studies conducted from 1974 to 1983
+1,jreneerkens,rlanctot,95,Beintema & Müskens 1987,Tringa_totanus,"The Netherlands, whole country",unknown,unknown,paper summarizes many studies conducted from 1974 to 1983
+1,jreneerkens,rlanctot,95,Beintema & Müskens 1987,Vanellus_vanellus,"The Netherlands, whole country",unknown,unknown,paper summarizes many studies conducted from 1974 to 1983
+1,eschlicht,mcragnolini,96,Rudenko 1998,Haematopus_ostralegus,"Konskyi islansd, Black Sea reserve",unknown,unknown,"dates of egg-laying reported in Fig3: it could suggest they monitored the nests form that point on, but there is nothing written in the text"
+1,apintaric,rlanctot,97,Jackson & Green 2000,Calidris_alpina,"South Uist, Hebrides",unknown,unknown,
+1,apintaric,rlanctot,97,Jackson & Green 2000,Charadrius_hiaticula,"South Uist, Hebrides",unknown,unknown,
+1,apintaric,rlanctot,97,Jackson & Green 2000,Haematopus_ostralegus,"South Uist, Hebrides",unknown,unknown,
+1,apintaric,rlanctot,97,Jackson & Green 2000,Tringa_totanus,"South Uist, Hebrides",unknown,unknown,
+1,apintaric,rlanctot,97,Jackson & Green 2000,Vanellus_vanellus,"South Uist, Hebrides",unknown,unknown,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Arenaria_interpres,south part of Oländ,,,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Calidris_alpina,south part of Oländ,,,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Charadrius_hiaticula,south part of Oländ,,,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Haematopus_ostralegus,south part of Oländ,,,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Limosa_limosa,south part of Oländ,,,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Recuvirostra_avosetta,south part of Oländ,,,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Tringa_totanus,south part of Oländ,,,
+1,"check (Swedish), eschlicht",,98,Otwall 2005,Vanellus_vanellus,south part of Oländ,,,
+1,rlanctot,eweiser,99,Lauro & Nol 1995,Haematopus_fuliginosus,"Furneaux Island Group, Tasmania",unknown,unknown,I checked the Methods and Results twice and there was nothing about nest-search frequency or age found
+1,rlanctot,eweiser,99,Lauro & Nol 1995,Haematopus_longirostris,"Furneaux Island Group, Tasmania",unknown,unknown,I checked the Methods and Results twice and there was nothing about nest-search frequency or age found
+1,mcragnolini,rlanctot,100,Michaux 2013,Haematopus_unicolor,"Long Bay Regional Park and Okura estuary, Auckland",unknown,unknown,
+1,apintaric,rlanctot,101,Moore & Reid 2009,Haematopus_chathamensis,Chatham Island,unknown,unknown,
+1,rlanctot,eweiser,103,Pierce 1986,Himantopus_leucocephalus,"Cass river Valley, New Zealand",1-2 per week,unknown,
+1,rlanctot,eweiser,103,Pierce 1986,Himantopus_novaezelandiae,"Cass river Valley, New Zealand",1-2 per week,unknown,
+1,FSquirrell,rlanctot,104,Herring et al. 2011,Himantopus_mexicanus,"San Francisco Bay, California",1-2 per week,unknown,
+1,FSquirrell,rlanctot,104,Herring et al. 2011,Recurvirostra_americana,"San Francisco Bay, California",1-2 per week,unknown,
+1,"check (Swedish), eschlicht",,110,Flodin et al. 1995,Calidris_alpina,"Varberg, South-West Sweeden",,,
+1,"check (Swedish), eschlicht",,110,Flodin et al. 1995,Limosa_limosa,"Varberg, South-West Sweeden",,,
+1,"check (Swedish), eschlicht",,110,Flodin et al. 1995,Philomachus_pugnax,"Varberg, South-West Sweeden",,,
+1,"check (Swedish), eschlicht",,110,Flodin et al. 1995,Tringa_totanus,"Varberg, South-West Sweeden",,,
+1,"check (Swedish), eschlicht",,110,Flodin et al. 1995,Vanellus_vanellus,"Varberg, South-West Sweeden",,,
+1,eschlicht,rlanctot,111,Hart et al. 2002,Vanellus_vanellus,"Elmley marshes, England, grazed marshes",unknown,unknown,
+1,eschlicht,rlanctot,111,Hart et al. 2002,Vanellus_vanellus,"Elmley marshes, England, ungrazed marshes",unknown,unknown,
+1,rlanctot,*in german(?)*,115,Junker et al. 2006,Vanellus_vanellus,"Stollhammer Wisch, Northern Lower Saxony",,,
+1,eschlicht,*in german(?)*,118,Puchta et al. 2009,Vanellus_vanellus,"Lustenau, Austrian Rhine Valley, arable land",,,
+1,eschlicht,*in german(?)*,118,Puchta et al. 2009,Vanellus_vanellus,"Lustenau, Austrian Rhine Valley, arable land, first brood",,,
+1,eschlicht,*in german(?)*,118,Puchta et al. 2009,Vanellus_vanellus,"Lustenau, Austrian Rhine Valley, arable land, replacement brood",,,
+1,eschlicht,*in german(?)*,118,Puchta et al. 2009,Vanellus_vanellus,"Lustenau, Austrian Rhine Valley, unimproved wet land",,,
+1,eschlicht,*in german(?)*,118,Puchta et al. 2009,Vanellus_vanellus,"Lustenau, Austrian Rhine Valley, unimproved wet meadow",,,
+1,jreneerkens,rlanctot,127,"Sheldon et al. 2013, Sheldon and Donald in litt.",Vanellus_gregarius,Korgalzhyn,unknown,unknown,
+1,jreneerkens,rlanctot,127,"Sheldon et al. 2013, Sheldon and Donald in litt.",Vanellus_gregarius,Pavlodar,unknown,unknown,
+1,mcragnolini,rlanctot,130,Byrkjedal 1987,Eudromias_morinellus,"Hardangervidda, Norway",1-2 per week,unknown,
+1,mcragnolini,rlanctot,130,Byrkjedal 1987,Pluvialis_apricaria,"Hardangervidda, Norway",1-2 per week,unknown,
+1,mcragnolini,rlanctot,131,Schekkerman et al. 2004,Arenaria_interpres,"Medusa Bay, Taimyr, 18km south of Dikson",1-2 per week,unknown,
+1,mcragnolini,rlanctot,131,Schekkerman et al. 2004,Calidris_alpina,"Medusa Bay, Taimyr, 18km south of Dikson",1-2 per week,unknown,
+1,mcragnolini,rlanctot,131,Schekkerman et al. 2004,Calidris_ferruginea,"Medusa Bay, Taimyr, 18km south of Dikson",1-2 per week,unknown,
+1,mcragnolini,rlanctot,131,Schekkerman et al. 2004,Calidris_minuta,"Medusa Bay, Taimyr, 18km south of Dikson",1-2 per week,unknown,
+1,mcragnolini,rlanctot,131,Schekkerman et al. 2004,Charadrius_hiaticula,"Medusa Bay, Taimyr, 18km south of Dikson",1-2 per week,unknown,
+1,mcragnolini,rlanctot,131,Schekkerman et al. 2004,Pluvialis_fulva,"Medusa Bay, Taimyr, 18km south of Dikson",1-2 per week,unknown,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Arenaria_interpres,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Calidris_alpina,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Calidris_mauri,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Calidris_melanotos,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Calidris_ptilocnemis,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Calidris_temminckii,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Charadrius_hiaticula,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Eurynorhynchus_pygmeus,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Limnodromus_scolopaceus,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Phalaropus_fulicarius,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Phalaropus_lobatus,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Philomachus_pugnax,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Pluvialis_fulva,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Pluvialis_squatarola,Bay of Chaun and Koljuchinskaja,,,
+1,dsolovyeva,*in russian*,133,Kondrjatev 1982,Tringa_erythropus,Bay of Chaun and Koljuchinskaja,,,
+1,rlanctot,*in russian*,134,Tomkovich & Dondua 2011,Pluvialis_squatarola,"Wrangel Island, Chukotka",,,
+1,apintaric,rlanctot,135,Wills et al. 2003,Charadrius_aquilonius,Matakana Island,daily,unknown,
+1,mcragnolini,,136,"Messrs Heywood, Watts, Thompson & Chester (pers. comm. & Nest Record Cards) in Pienkowski 1984",Charadrius_hiaticula,"Farne Islands, Northumberland",,,
+1,mcragnolini,,136,N. K. Atkinson (pers. comm.) in Pienkowski 1984,Charadrius_hiaticula,"St Cyrus, Scotland",,,
+1,mcragnolini,,136,P. A. Snell (pers. comm.) in Pienkowski 1984,Charadrius_hiaticula,"Lindisfarne NNR, North Englang",,,
+1,mcragnolini,rlanctot,136,Pienkowski 1984,Charadrius_hiaticula,"Lindisfarne NNR, North Englang",unknown,unknown,
+1,mcragnolini,rlanctot,136,Pienkowski 1984,Charadrius_hiaticula,"Mestersvig, Scoresby Land, Greenland",unknown,unknown,
+1,rlanctot,eweiser,138,Cooper & Miller 1997,Calidris_minutilla,"Graham Island, British Columbia",unknown,unknown,"""Systematic searches throughout the season"" but does not state frequency. ""Nests were checked regularly."" No info on nest age at discovery"
+1,rlanctot,eweiser,138,Cooper & Miller 1997,Charadrius_semipalmatus,"Graham Island, British Columbia",unknown,unknown,"""Systematic searches throughout the season"" but does not state frequency. ""Nests were checked regularly."" No info on nest age at discovery"
+1,rlanctot,eweiser,138,Cooper & Miller 1997,Charadrius_vociferus,"Graham Island, British Columbia",unknown,unknown,"""Systematic searches throughout the season"" but does not state frequency. ""Nests were checked regularly."" No info on nest age at discovery"
+1,rlanctot,mbulla,140,Dolanský & Ždárek 2001,Actitis_hypoleucos,Orlice,unknown,unknown,nests searched when incubation expected
+1,rlanctot,mbulla,140,Dolanský & Ždárek 2001,Charadrius_dubius,Orlice,unknown,unknown,nests searched when incubation expected
+1,mcragnolini,rlanctot,141,"Cepáková et al. 2007, Cepáková et al. In litt.",Charadrius_dubius,Trebonsko,1-2 per week,unknown,
+1,rlanctot,eweiser,144,Kantrud & Higgins 1992,Bartramia_longicauda,"North Dakota, South Dakota, Manitoba, Montana",unknown,unknown,
+1,rlanctot,eweiser,144,Kantrud & Higgins 1992,Catoptrophorus_semipalmatus / Tringa semipalmata,"North Dakota, South Dakota, Manitoba, Montana",unknown,unknown,
+1,rlanctot,eweiser,144,kantrud & Higgins 1992,Charadrius melodus,"North Dakota, South Dakota, Manitoba, Montana",unknown,unknown,
+1,rlanctot,eweiser,144,Kantrud & Higgins 1992,Charadrius_vociferus,"North Dakota, South Dakota, Manitoba, Montana",unknown,unknown,
+1,rlanctot,eweiser,144,Kantrud & Higgins 1992,Gallinago_delicata,"North Dakota, South Dakota, Manitoba, Montana",unknown,unknown,
+1,rlanctot,eweiser,144,Kantrud & Higgins 1992,Limosa_fedoa,"North Dakota, South Dakota, Manitoba, Montana",unknown,unknown,
+1,rlanctot,eweiser,144,Kantrud & Higgins 1992,Steganopus_tricolor (Phalaropus tricolor),"North Dakota, South Dakota, Manitoba, Montana",unknown,unknown,
+1,eschlicht,rlanctot,146,Richardson 1999,Charadrius_melodus,"Freshwater lake and surrounding, Alberta, control",1-2 per week,unknown,surveyed every 2 days
+1,eschlicht,rlanctot,146,Richardson 1999,Charadrius_melodus,"Freshwater lake and surrounding, Alberta, predator exclosure",1-2 per week,unknown,surveyed every 2 days
+1,gbambini,rlanctot,154,Carmona-Isunza et al.2015,Charadrius_nivosus,"Bahia de Ceuta, Mexico",unknown,unknown,
+1,gbambini,rlanctot,154,Carmona-Isunza et al.2015,Charadrius_alexandrinus,"Maio, Cape Verde",unknown,unknown,
+1,gbambini,rlanctot,155,Al Rashidi 2016,Charadrius_alexandrinus,Jabal lagoons,unknown,unknown,
+1,rlanctot,eweiser,156,Paton 1994,Charadrius_nivosus,"Howard Slough WMA, Great Salt Lake, Utah",1-2 per week,unknown,
+1,rlanctot,eweiser,156,Paton 1994,Charadrius_alexandrinus_nivosus,"Howard Slough WMA, Great Salt Lake, Utah",1-2 per week,unknown,
+1,rlanctot,eweiser,156,Paton 1994,Charadrius_alexandrinus_nivosus,"West Layton Marsh, Great Salt Lake, Utah",1-2 per week,unknown,
+1,gbambini,rlanctot,158,Neuman 2003,Charadrius_nivosus,"Monterey Bay, California",unknown,unknown,
+1,eschlicht,mcragnolini,160,Tan et al. 2015,Charadrius_ruficapillus,"Cheetham Wetlands, Victoria",unknown,unknown,
+1,jreneerkens,mcragnolini,163,Dowling & Weston 1999,Thinornis_rubricollis,"Mornington Peninsula NP, Victoria",unknown,unknown,
+1,mcragnolini,,167,Tarboton 1994,Actophilornis_africanus,"Deelkraal Dam, Transvaal",,,
+1,mcragnolini,,168,Butchart 2000,Metopidius_indicus,"Vembanur lake, India",,,
+1,mcragnolini,,171,Miller & Jordan 2011,Scolopax_minor,"Swatara State Park, Pennsylvania",,,
+1,eweiser,,172,Miskelly 1990,Coenocorypha_pusilla,"Chatham Island, Snares Islands Nature reserve",,,
+1,eweiser,,172,Miskelly 1990,Coenocorypha_aucklandica,"Main Island, Snares Islands Nature reserve",,,
+1,dsolovyeva,*in russian*,174,Yarovikova 2003,Gallinago_gallinago,Kaliningrad region,,,
+1,gbambini,mcragnolini,175,Groen & Hemerik 2002,Limosa_limosa,"Wormer & Jisperveld reserve, Noord-Holland",1-2 per week,unknown,"""Nests were located and checked by weekly surveys"""
+1,rlanctot,eweiser,177,Larsen & Moldsvor 1992,Limosa_lapponica,Kautokeino,daily,early incubation,"""The different parts of the study area were censused systematically every second day"" which is closest to our ""daily"" category."
+1,rlanctot,eweiser,177,Larsen & Moldsvor 1992,Numenius_phaeopus,Kautokeino,daily,laying,"""The different parts of the study area were censused systematically every second day"" which is closest to our ""daily"" category."
+1,rlanctot,eweiser,178,Skeel 1983,Numenius_phaeopus,"Churchill, Manitoba",unknown,unknown,"""nests were found after onset of incubation"" but not clear what age"
+1,apintaric,mcragnolini,180,Katrínardóttir et al. 2015,Numenius_phaeopus,South-west Iceland,unknown,mid incubation,"nests checked twice a week; nest search frequency not specified in the text, but the count of breeding pairs is mentioned (frequency = every 2 weeks), it is plausible the nest search happened at least every 2 weeks; nest days of each single nest are available in the supporting information, from the successful nests it seems most nests were found in early-mid incubation stage"
+1,mcragnolini,rlanctot,181,Berg 1992,Numenius_arquata,Västmanland (central Sweeden),unknown,unknown,
+1,eschlicht,mcragnolini,182,Grant et al. 1999,Numenius_arquata,"Antrim, Northern Ireland",unknown,unknown,"when most nests were found: nothing in thext, from Table1 clear that most nests were found after clutch-completion, but no info about which stage; ""nests were generally not visited again until they were estimated to be within 7 days of hatching""; no info about nest search frequency"
+1,eschlicht,mcragnolini,182,Grant et al. 1999,Numenius_arquata,"Lough Erne, Northern Ireland",unknown,unknown,"when most nests were found: nothing in thext, from Table1 clear that most nests were found after clutch-completion, but no info about which stage;""nests were generally not visited again until they were estimated to be within 7 days of hatching""; no info about nest search frequency"
+1,eschlicht,mcragnolini,183,Valkama et al. 1999,Numenius_arquata,Kauhava,unknown,early incubation,"80% of first-clutches must have been found during the first 2 weeks of May, since they were marked to minimize the losses due to farming activities in that period + nests were found after the onset of incubation + the first eggs are laid during the first 2 weeks of May -> suggests that most nests were found during early incubation; no info about nest search frequency"
+1,eschlicht,mcragnolini,183,Valkama et al. 1999,Numenius_arquata,Vammala,unknown,early incubation,"80% of first-clutches must have been found during the first 2 weeks of May, since they were marked to minimize the losses due to farming activities in that period + nests were found after the onset of incubation + the first eggs are laid during the first 2 weeks of May -> suggests that most nests were found during early incubation; no info about nest search frequency"
+1,dsolovyeva,mcragnolini,184,"Antonov 2010, A. I. Antonov in litt.",Numenius_madagascariensis,"Bureya–Khingan lowland, Amur",unknown,unknown,
+1,mcragnolini,rlanctot,185,Redmond & Jenni 1986,Numenius_americanus,"Middleton, Idaho",unknown,unknown,
+1,dsolovyeva,,186,Larionov 2015,Xenus_cinereus,"Yakutia, Lena River",,,
+1,dsolovyeva,,186,Larionov 2015,Tringa_glareola,"Yakutia, Lena River",,,
+1,dsolovyeva,,186,Larionov 2015,Tringa_stagnatilis,"Yakutia, Lena River",,,
+1,eschlicht,mcragnolini,188,Pulliainen & Saari 1991,Tringa_glareola,Värriö Subarctic Research Station,unknown,mid incubation,"""The mean date of nest finding was 16 June +/- 9 days [...]"", ""The mean date of hatching was 27 June +/- 7 days"" -> most likely that nests were found during mid incubation (also written that only one clutch was found during egg laying); "
+1,mcragnolini,rlanctot,202,Holmes 1972,Calidris_mauri,"Kolomak river, Alaska",unknown,unknown,
+1,rlanctot,*in russian*,203,Morozov & Tomkovich 1988,Calidris_ruficollis,"Uelen, Chukotka",,,
+1,"Cdura, DONE",mcragnolini,204,Rönkä et al. 2003,Calidris_temminckii,Botnic Bay around Oulu,unknown,unknown,"more information might be available in another paper (Rönkä 1996), but was not readily available for download"
+1,Cdura,mcragnolini,205,Thompson et al. 2014,Calidris_temminckii,Botnic Bay around Oulu,unknown,unknown,"""Intensive searching for territories and nests started in the middle of May and continued throughout the breeding season."""
+1,eweiser,mcragnolini,206,McKinnon & Bêty 2009,Calidris_bairdii,"Qarlikturvik Valley, Sirmilik National Park",unknown,unknown,"""We searched for the nests of Baird’s and White-rumped sandpipers during the early laying and incubation periods"
+1,eweiser,mcragnolini,206,McKinnon & Bêty 2009,Calidris_fuscicollis,"Qarlikturvik Valley, Sirmilik National Park",unknown,unknown,"""We searched for the nests of Baird’s and White-rumped sandpipers during the early laying and incubation periods"
+1,mcragnolini,rlanctot,209,Schekkerman et al. 1998,Calidris_ferruginea,"Pronchishchev Lake, Taimyr",unknown,unknown,"25 nests found and 10 additional broods found later, 6-8 were assumed to have hatched within its boundaries.  maybe interpret this as finding nests during mid to late incubation?"
+1,apintaric,eweiser,210,Pierce et al. 2010,Calidris_maritima,"Longyearbyen, Svalbard",daily,unknown,Weight data suggest nests found throughout incubation
+1,gbambini,eweiser,216,Hanane et al. 2010,Glareola_pratincola,Rabat-Bouznika,unknown,unknown,
+1,mcragnolini,eweiser,218,Williams et al. 1989,Glareola_nuchalis,Mpala Jena island,unknown,unknown,
+2,eweiser,mcragnolini,50,Dinsmore et al. 2002,Charadrius_montanus,north-central Montana,unknown,unknown,
+2,rlanctot,mcragnolini,67,Lloyd 2004,Rhinoptilus_africanus,"Droëgrond, Northern Cape Province",unknown,unknown,
+2,rlanctot,mcragnolini,67,Lloyd 2004,Rhinoptilus_africanus,Kalahari Gemsbok National Park,unknown,unknown,
+2,rlanctot,mcragnolini,85,Taylor 2006,Burhinus_oedicnemus,"Salisbury plain, Wessex",1-2 per week,unknown,"20 March-20 April (settlement period) sites surveyed every 3 days; after 20 Apri, visited every 3-5 days"
+2,FSquirrell,mcragnolini,86,Nadeem at al. 2014,Burhinus_oedicnemus,Nag Valley,unknown,unknown,
+2,eweiser,mcragnolini,88,Lishman & Nol 2012,Pluvianellus_socialis,Santa Cruz Province,less than weekly,unknown,"""Surveys using our technique of parallel walking, repeated monthly, detected 90%of pairs [...]"""
+2,eweiser,mcragnolini,89,Tessler & Garding 2006,Haematopus_bachmani,"Beardslee Islands, Alaska",1-2 per week,unknown,"""Survey and search protocols followed Poe 2003"", full citation not available, article not found; ""A visitation schedule was implemented to insure that each identified territory was revisited at least every seven days"""
+2,"Cdura, done",mcragnolini,91,Barbieri & Delchiaro 2009,Haematopus_palliatus,São Paulo coast,1-2 per week,unknown,"Weekly search and visits, overall 80 search/visits from August till December"
+2,rlanctot,mcragnolini,94,Hughey 1985,Anarhynchus_frontalis,Rakaia and Ashey river,less than weekly,early incubation,"""Both study areas were searched at least forthnightly [...]""; 'when most nests found' info estimated from Figure 3-1"
+2,rlanctot,mcragnolini,94,Hughey 1985,Charadrius_bicinctus,Rakaia and Ashey river,less than weekly,mid incubation,"""Both study areas were searched at least forthnightly [...]""; 'when most nests found' info estimated from Figure 3-2, most nests with known incubation period were found in mid incubation, but overall most nest have unknown initiation date"
+2,rlanctot,mcragnolini,94,Hughey 1985,Haematopus_finschi (H. ostralegus finchi),Rakaia and Ashey river,less than weekly,early incubation,"""Both study areas were searched at least forthnightly [...]"", 'when most nests found' info estimated from Figure 3-5"
+2,rlanctot,mcragnolini,94,Hughey 1985,Himantopus_himantopus,Rakaia and Ashey river,less than weekly,early incubation,"""Both study areas were searched at least forthnightly [...]"", 'when most nests found' info estimated from Figure 3-4"
+2,cdura,mcragnolini,102,Cuervo 2005,Himantopus_himantopus,"Doñana + Odiel, Southern Spain",1-2 per week,unknown,"""Breeding areas were surveyed every 1–5 days in search of recurvirostrid nests [...]"""
+2,cdura,mcragnolini,102,Cuervo 2005,Recurvirostra_avosetta,"Doñana, Southern Spain",1-2 per week,unknown,"""Breeding areas were surveyed every 1–5 days in search of recurvirostrid nests [...]"""
+2,rlanctot,mcragnolini,106,Galbraith 1988,Vanellus_vanellus,"Dalwhinnie and Kingussie, Scotland",unknown,mid incubation,"""Most nests were found after the last egg had been laid"""
+2,rlanctot,mcragnolini,107,Baines 1990,Vanellus_vanellus,Eden Valley and Upper Teesdale,unknown,mid incubation,"""Many of the clutches were found during incubation"""
+2,mcragnolini,,108,Berg et al. 1992,Vanellus_vanellus,"Västerfärnebo (""near"" Stockholm)",,,
+2,eweiser,,109,Blomqvist & Johansson 1995,Vanellus_vanellus,near Gothenburg,,,
+2,mbulla,,112,Schröpfer 2002,Vanellus_vanellus,"Holýšov surroundings, West Bohemia",,,
+2,mcragnolini,,113,Šálek & Šmilauer 2002,Vanellus_vanellus,"Ceskobudejovicko, South Bohemia",,,
+2,mcragnolini,,116,Sharpe 2006,Vanellus_vanellus,"Flintshire, North Wales",,,
+2,jreneerkens,mcragnolini,117,Kragten & De Snoo 2007,Vanellus_vanellus,Netherlands,1-2 per week,unknown,
+2,mbulla,,119,Zámečníket al. 2017,Vanellus_vanellus,Bohemia,,,
+2,apintaric,mcragnolini,120,Makrigianni et al. 2008,Vanellus_spinosus,Evros Delta,1-2 per week,unknown,"in the ""Nesting site selection"" paragraph, it's mentioned that  ""From the arrival of the birds (around the end of February) the wetland was visited three times a week"""
+2,rlanctot,mcragnolini,121,Ade 1979,Vanellus_coronatus,Harare(Salisbury),unknown,unknown,
+2,mbulla,mcragnolini,122,Takahashi & Ohkawara 2007,Vanellus_cinereus,"Kaga city, Ishikawa prefecture",1-2 per week,unknown,
+2,gbambini,mcragnolini,123,Barlow et al. 1972,Vanellus_novaehollandie,"Invercargill, Southland",unknown,unknown,"it seems most nest were found during incubation, but the stage is not specified"
+2,rlanctot,mcragnolini,124,Giese & Jones 1996,Vanellus_novaehollandie,"Pinjara Hills, Brisbane",unknown,unknown,"information refering to the frequancy of behavioural observations, but it could be also the frequency of nest search: ""Observations were carried out on 1-3 full days per week from May to December in both 1989 and December 1990"""
+2,eweiser,mcragnolini,125,Cardilini et al. 2013,Vanellus_miles,"Phillip Island, southern Victoria",unknown,unknown,"""Breeding pairs were located by systematic searching from vehicle and by foot."", no info about frequency"
+2,rlanctot,mcragnolini,126,Watson et al. 2006,Vanellus_gregarius,Kazakhstan,unknown,unknown,
+2,"cdura, DONE",mcragnolini,128,Cerboncini et al. 2015,Vanellus_chilensis,"Curitiba, Paraná (CITY!)",unknown,unknown,paper focuses on the capture method of breeding birds
+2,jreneerkens,mcragnolini,129,"Santos in litt., Santos & Macedo 2017",Vanellus_chilensis,Brasília,unknown,unknown,
+2,apintaric,mcragnolini,139,Katayama et al. 2010,Charadrius_placidus,"Tama River, Nagata district",1-2 per week,unknown,"""We searched for nests at least one day a week during the breeding season"", most nests found during unknown stage of incubation"
+2,rlanctot,mcragnolini,142,Bergstrom 1982,Charadrius_wilsonia,"Laguna Atascosa National Wildlife Refuge, Texas",unknown,unknown,nesting had already begun at the time of the study
+2,rlanctot,mcragnolini,142,Bergstrom 1982,Charadrius_wilsonia,"Matagorda Island, Texas",unknown,unknown,nesting had already begun at the time of the study
+2,mcragnolini,,143,Brown & Brindock 2011,Charadrius_wilsonia,"St. Martin, Lesser Antilles",,,
+2,apintaric,unknown,145,Catlin et al. 2011,Charadrius_melodus,"Missouri 95 km, South Dakota/Nebraska",1-2 per week,laying,searched for nests every 1-3 days from April to August. 
+2,mcragnolini,,147,White 2005,Charadrius_melodus,"Chaplin Lake, Saskatchewan",,,
+2,eschlicht,mcragnolini,148,Zefania et al. 2008,Charadrius_thoracicus,Marambitsy Bay,unknown,unknown,
+2,eschlicht,mcragnolini,148,Zefania et al. 2008,Charadrius_thoracicus,Tsimanampetsotsa,unknown,unknown,
+2,mcragnolini,,149,Burns et al. 2013,Charadrius_sanctaehelenae,St. Helena Island,,,
+2,"Cdura, done",mcragnolini,150,Székely et al. 1994,Charadrius_alexandrinus,Miklapuzsta,unknown,laying,"""Each pair was observed once before or during egg-laying.""; ""Only clutches found during egg-laying or at the start of incubation were used in manipulation experiments"""
+2,ready,,151,Pietrelli et al. 2001,Charadrius_alexandrinus,"Castel Porziano, near Rome",,,
+2,apintaric,,152,Kozstolány et al. 2009,Charadrius_alexandrinus,Al Wathba Wetland Reserve,,,
+2,jreneerkens,,153,Al Rashidi et al. 2011,Charadrius_alexandrinus,Farasan Islands,,,
+2,eschlicht,,157,Rupert 1997,Charadrius_nivosus,"Laguna Atascosa National Wildlife Refuge, Texas",,,
+2,jreneerkens,,159,Demers & Robinson-Nilsen 2012,Charadrius_nivosus,"California, Eden Landing Ecological Reserve",,,
+2,eschlicht,,161,Yasué et al. 2007,Charadrius_peronii,"Khao Sam Roi Yod National Park, Beach, resampling of pair within habitat",,,
+2,eschlicht,,161,Yasué et al. 2007,Charadrius_peronii,"Khao Sam Roi Yod National Park, Saltflat, resampling of pair within habitat",,,
+2,apintaric,,162,Keedwell & Sanders 2002,Charadrius_bicinctus,"Ohau River, South Island",,,
+2,jreneerkens,,164,Baird & Daan 2003,Thinornis_rubricollis,"Phillip Island, southern Victoria",,,
+2,ready,,165,Davis 1994,Thinornis_novaeseelandiae,Rangatira (South East) island New Zealand,,,
+2,"Cdura, done",,166,Hsu & Severinghaus 2011,Rostratula_benghalensis,I-Lan (in the city!!!),,,
+2,rlanctot,,169,Osborne 1982,Jacana_jacana,Burma willage 65 km from Georgetown,,,
+2,eschlicht,,170,Hoodles & Coulson 1998,Scolopax_rusticola,Central & S England,,,
+2,eschlicht,,170,Hoodles & Coulson 1998,Scolopax_rusticola,"England, Scotland, Wales (Central & S England, N England, Scotland)",,,
+2,eschlicht,,170,Hoodles & Coulson 1998,Scolopax_rusticola,N England,,,
+2,eschlicht,,170,Hoodles & Coulson 1998,Scolopax_rusticola,Scotland,,,
+2,eweiser,,173,Mongin 2002,Gallinago_media,"whole country, centre",,,
+2,mcragnolini,,173,Mongin 2002,Gallinago_gallinago,"whole country, centre",,,
+2,jreneerkens,,176,Groen et al. 2006,Limosa_limosa,"Selenga delta, Bajkal",,,
+2,mcragnolini,,179,Pulliainen & Saari 1993,Numenius_phaeopus,Värriö Subarctic Research Station,,,
+2,mcragnolini,,187,Christian & Hancock 2009,Tringa_nebularia,"north Sutherland, Scotland",,,
+2,jreneerkens,,189,Cuthbertson et al. 1952,Actitis_hypoleucos,"Sedbergh, England",,,
+2,eschlicht,,190,Holland et al. 1982,Actitis_hypoleucos,Alport and Ashop river,,,
+2,mcragnolini,,191,Cialdini & Orians 1944,Actitis_macularius,"Milwaukee, Wisconsin",,,
+2,eweiser,,192,Miller & Miller 1948,Actitis_macularius,"Belle isle, Detroit river, Michigan",,,
+2,mcragnolini,,193,Hays 1972,Actitis_macularius,"Great Gull Island, New York",,,
+2,FSquirrell,,194,Oring & Knudson 1972,Actitis_macularius,"near La Salle lagoon, Minnesota",,,
+2,jreneerkens,,195,Alberico et al. 1991,Actitis_macularius,"Little Pelican Island, Minesotta",,,
+2,dsolovyeva,,197,Tomkovich 2001,Calidris_tenuirostris,upper Anadyr R,,,
+2,eschlicht,,198,Parmelee 1970,Calidris_alba,Bathurst Island,,,
+2,rlanctot,,200,Gratto and Cooke 1983,Calidris_pusilla,"La Perouse Bay, Manitoba",,,
+2,mcragnolini,,207,Reid & Montgomerie 1985,Calidris_bairdii,"Sarcpa Lake, Melville Peninsula",,,
+2,rlanctot,,208,Soloviev et al. 2010,Calidris_alpina,Lower Khatanga River,,,
+2,rlanctot,,208,Soloviev et al. 2010,Calidris_melanotos,Lower Khatanga River,,,
+2,rlanctot,,208,Soloviev et al. 2010,Calidris_minuta,Lower Khatanga River,,,
+2,rlanctot,,208,Soloviev et al. 2010,Phalaropus_fulicarius,Lower Khatanga River,,,
+2,rlanctot,,208,Soloviev et al. 2010,Philomachus_pugnax,Lower Khatanga River,,,
+2,rlanctot,,211,Jönsson 1991,Calidris_alpina,SW Skane (Soutwest Sweeden),,,
+2,rlanctot,,212,Kagarise 1979,Steganopus_tricolor (Phalaropus tricolor),"Audubon National Wildlife Refuge, North Dacota",,,
+2,eschlicht,,214,Gonçalves 2014,Cursorius_cursor,Maio (Cape Verde),,,
+2,apintaric,,217,Brosset 1979,Glareola_nuchalis,"M'Passa, near Makokou",,,
+,vldamico,,600,,Charadrius falklandicus,"North Chubut, Patagonia Argentina",,,
+,gdhevia,,600,,Charadrius falklandicus,"North Chubut, Patagonia Argentina",,,
+,mbertellotti,,600,,Charadrius falklandicus,"North Chubut, Patagonia Argentina",,,
