@@ -16,6 +16,7 @@ CONTENT
 2. Data
     a) csv file with newly extracted data (see column definitions below)
     b) sources.xlsx
+    c) obs_check.csv
 3. Scripts
 4. Model_assumptions
 5. Acknowledgements
@@ -69,6 +70,17 @@ Data_quality	5 = all data found easily; 4 = at least one value derived (e.g. thr
 
 2b. sources.xlsx contains informatin on sources found in Kubelka et al with unique number for each sources (as listed in Kubelka et al)
 
+2c. obs_check.csv - contains repeated extraction of data on nest searching and time when most nests found from sources cited in Kubelka et al. (for repeatability)
+who1 	unique name abbreviation of the person extracting the information from the literature 
+who2	unique name abbreviation of the person extracting the information from the literature for the second time (for the repeatability measurement)
+source_id 	number of the source as per Kubelka et al's numbered reference list
+ref_abb 	exact short reference abbreviation as used by Kubelka et al
+species		exact species name as used by Kubelka et al (underscore between genus and species name)
+locality	study site. Sites within 40 km of each other may be merged
+nest_search_frequncy	did the study provide information about nest search frequency? unknown, daily, less then weekly
+when_most_nests_found	did the study provide information about when within nesting period where most nests found? unknown, at laying, early incubation, mid-incubation, at hatching
+comments
+
 --------------------------------------------------------------------------------------------------------
 
 3. Scripts to replicate the analyses 
@@ -81,6 +93,7 @@ Data_quality	5 = all data found easily; 4 = at least one value derived (e.g. thr
 	- Constants_Functions.R & Prepare_data.R are necessary to run the remaining scripts 	
 	- Prepare_predictions_Fig1 is necessary to run the script Fig1.R
 	- R01-R07 should be run in numerical order; all deal with our newly extracted dataset (including new calculations and comparisons with Kubelka et al.'s values).
+	- obs_check calculates the repeatability of our data extraction from literature about nest searching intensity and time within nesting most nests were found
 	- The names of the remaining R-scripts indicate the figure or table in the main text and supplement
 	
 --------------------------------------------------------------------------------------------------------

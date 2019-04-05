@@ -19,12 +19,9 @@ d = rbind(d2,d)
 
  d$int5 = ifelse(d$mean_year<1943, 1940, ifelse(d$mean_year<1948, 1945,ifelse(d$mean_year<1953, 1950,ifelse(d$mean_year<1958, 1955, ifelse(d$mean_year<1963, 1960, ifelse(d$mean_year<1968, 1965, ifelse(d$mean_year<1973, 1970, ifelse(d$mean_year<1978, 1975, ifelse(d$mean_year<1983,1980, ifelse(d$mean_year<1988,1985, ifelse(d$mean_year<1993, 1990, ifelse(d$mean_year<1998, 1995, ifelse(d$mean_year<2003, 2000, ifelse(d$mean_year<2008, 2005,  ifelse(d$mean_year<2013, 2010, 2016)))))))))))))))
   
-  d$N = 1
+  d$n = 1
   ddr5 = ddply(d,.(Belt,int5), summarise, trans = mean (trans), n = sum(n))	
   
-ggplot(d,aes(x = mean_year, y = trans, col = Belt))+stat_smooth()+facet_wrap(~Belt, ncol = 6)  + ylab("% of populations\nwith estimated exposure")+xlab("Year")
-ggsave(file=paste(outdir,'loess_Belt_trans.png',sep=''),dpi = 600)
-
 ggplot(d,aes(x = mean_year, y = trans, col = Belt))+stat_smooth() + 
 		geom_point(data = ddr5, mapping = aes(x = int5, y = trans, size = n)) +
 		facet_wrap(~Belt, ncol = 6)+
@@ -33,9 +30,10 @@ ggplot(d,aes(x = mean_year, y = trans, col = Belt))+stat_smooth() +
 		xlab("Year")+
 		guides(col=FALSE)
 
-ggsave(file=paste(outdir,'loess_Belt_trans_points.png',sep=''),dpi = 600, width = 33, height = 7.5, units = 'cm')
+ggsave(file=paste(outdir,'Fig_SA.png',sep=''),dpi = 600, width = 33, height = 7.5, units = 'cm')
 
-
+ggplot(d,aes(x = mean_year, y = trans, col = Belt))+stat_smooth()+facet_wrap(~Belt, ncol = 6)  + ylab("% of populations\nwith estimated exposure")+xlab("Year")
+ggsave(file=paste(outdir,'loess_Belt_trans.png',sep=''),dpi = 600)
   
 # Arctic only
 a = d[order(d$mean_year) & d$Belt == 'Arctic',]

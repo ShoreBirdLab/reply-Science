@@ -59,6 +59,8 @@ b$lat_abs = abs(b$Latitude) # abs latitude
 b$ln_N_nests = log(b$N_nests)
 b$hemisphere =as.factor(ifelse(b$Latitude > 0, "Northern", "Southern"))
 b$genus = gsub("\\_.*","",b$species)
+
+b$DPRtrans[b$DPRtrans == 'YES' & is.na(b$obs_time)] = "NO" # source_id 209 Schekkerman et al. 1998 (Calidris ferruginea) has data on exposure, and no information on the obs_time (Beintema transformation coefficient). Thus, the transformation was not needed. 
 	
 # load and prepare predation data used in the paper
 d = read.csv(paste(wd,"DATApopulations.csv",sep=""), h = T, sep=";",stringsAsFactors = FALSE)
@@ -73,6 +75,7 @@ d$lat_abs = abs(d$Latitude) # abs latitude
 d$ln_N_nests = log(d$N_nests)
 d$hemisphere =as.factor(ifelse(d$Latitude > 0, "Northern", "Southern"))
 d$genus = gsub("\\_.*","",d$species)
+d$DPR_trans[which(d$DPR_trans == 'YES' & d$source_id=="209")] = "NO"# source_id 209 Schekkerman et al. 1998 (Calidris ferruginea) has data on exposure, and no information on the obs_time (Beintema transformation coefficient). Thus, the transformation was not needed. 
 
 # prepare phylogenetic, distance and PI matricies
 tree2 = trees2[[42]]

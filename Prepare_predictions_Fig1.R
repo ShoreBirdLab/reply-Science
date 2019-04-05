@@ -61,7 +61,7 @@
 	dprB=newD	
 
 # Fig1C DPR
-    dd =d[d$DPR_trans == 'NO' & d$Belt %in% c('Arctic','North temperate'),]
+  	dd =d[d$DPR_trans == 'NO' & d$Belt %in% c('Arctic','North temperate'),]
 	nrow(dd)
 	#summary(dd$Belt)	
 	m = lmer(log(DPR) ~ ln_N_nests + poly(mean_year,2)*Belt+(1|site)+(1|species),  data =dd )
@@ -270,7 +270,6 @@ print(i)
 ppl = do.call(rbind,ll)  
   
 # I - Beintema effects
-#g[,c('obs_time','N.nests','other_failed','predated','infertile','hatched')]
 u=b[b$DPRtrans=='NO',]
 u=u[-which(is.na(u$obs_time)| is.na(u$other_failed)),]
 u$hatched[u$N.nests == 86 & u$Locality == 'South Uist, Hebrides'] = 86-19

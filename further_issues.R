@@ -1,0 +1,5 @@
+- ​one population (Schekkerman et al. 1998) has DPRtrans = YES but obs_time = NA and info on exposure and nest numbers available in the data and source - i.e. estiamtion of DPR according to Beintema was not done (is not needed)
+- use only single tree
+- use natural logarithm, but state that it is log10
+- un-transformed latitude, longitude for distance matrix
+- ineccesible literature

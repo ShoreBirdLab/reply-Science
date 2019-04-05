@@ -18,7 +18,8 @@ source(paste(wd, 'Prepare_predictions_Fig1.R',sep="")) # generates 18 warnings, 
 summary(factor(d$DPR_trans))
 # plot
 if(PNG == TRUE) {
-   png(paste(outdir,"Figure_1rev_points_co3_allAR.png", sep=""), width=3*1.6,height=3*1.45,units="in",res=600) 
+   #png(paste(outdir,"Figure_1_rev_pro_AR.png", sep=""), width=3*1.6,height=3*1.45,units="in",res=600) 
+   jpeg(paste(outdir,"Figure_1rev_pro_AR_down.jpg", sep=""), width=3*1.6,height=3*1.45,units="in",res=600, quality = 100) 
 	}else{dev.new(width=3*1.6,height=3*1.45)
   }
 #par(mar=c(2.2,1.7,0.5,0.5), ps=12, mgp=c(1.2,0.15,0), las=1,  tcl=-0.05,bty="n",xpd=TRUE, col.axis="black",font.main = 1, col.lab="black", col.main="black", fg="black", lwd = 0.5)  
@@ -199,16 +200,19 @@ layout(mat = matrix(c(1,2,3,4,
   text(x = 2016, y =100*0.98, labels= expression(bold("G")), col='black', cex = 0.7, xpd = TRUE)
   #text(x = 2016, y =100, labels= expression(bold("G")), col='black', cex = 0.7, adj = 0)
 	
-
-  polygon(c(ac$mean_year, rev(ac$mean_year)), c(ac$lwr, 
-	  rev(ac$upr)), border=NA, col = adjustcolor(col_$line_col[col_$Belt%in%c('Arctic')],alpha.f = 0.1), xpd = TRUE)
-	lines(ac$mean_year,ac$fit, col=col_$line_col[col_$Belt%in%c('Arctic')],lwd=1)
+  #polygon(c(a$mean_year, rev(a$mean_year)), c(a$lwr, 
+	#rev(a$upr)), border=NA, col = adjustcolor('grey25',alpha.f = 0.1), xpd = TRUE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
+  #lines(a$mean_year,a$fit, col='grey25',lwd=1)
+  
   polygon(c(re$mean_year, rev(re$mean_year)), c(re$lwr, 
 	  rev(re$upr)), border=NA, col = adjustcolor(rest,alpha.f = 0.1), xpd = TRUE)
-	lines(re$mean_year,re$fit, col=rest,lwd=1)	
-  #polygon(c(a$mean_year, rev(a$mean_year)), c(a$lwr, 
-	  #rev(a$upr)), border=NA, col = adjustcolor('black',alpha.f = 0.1), xpd = TRUE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
-	#lines(a$mean_year,a$fit, col='black',lwd=1)
+  lines(re$mean_year,re$fit, col=rest,lwd=1)	
+	
+  polygon(c(ac$mean_year, rev(ac$mean_year)), c(ac$lwr, 
+	  rev(ac$upr)), border=NA, col = adjustcolor(col_$line_col[col_$Belt%in%c('Arctic')],alpha.f = 0.1), xpd = TRUE)
+  lines(ac$mean_year,ac$fit, col=col_$line_col[col_$Belt%in%c('Arctic')],lwd=1)
+ 
+  
   
   
    	##for(i in unique(col_$Belt)){
@@ -229,20 +233,29 @@ layout(mat = matrix(c(1,2,3,4,
 	#symbols((ddr5$int5),(ddr5$mea)*100, circles=sqrt(ddr5$n/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE) 	 
 	#symbols((ddr5ac$int5),(ddr5ac$mea)*100, circles=sqrt(ddr5ac$n/pi),inches=0.14/1.75,bg=col_pb, fg=adjustcolor(col_$line_col[col_$Belt == 'Arctic'],alpha.f = 0.7),add=TRUE) 
 	
-	symbols((acr$int5),(acr$mea)*100, circles=sqrt(acr$n/pi),inches=0.14/1.75,bg=adjustcolor(acr$col_,alpha.f = 0.1),, fg=adjustcolor(acr$col,alpha.f = 0.7),add=TRUE)
-	  
-  text(x = c(1950), y =c(37), labels= substitute(paste(italic('N'), " populations:", sep="")), col='grey18', cex = 0.5, xpd = TRUE, adj = 0)
-	symbols(c(1970,1970, 1970, 1900),c(29,19.5,7,-20), circles=sqrt(c(5, 15,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
-	text(x = c(1970,1970, 1970, 1900)+9,c(29,19.5,7,-20), labels= c(5,15,30,10), col='grey18', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+	symbols((acr$int5),(acr$mea)*100, circles=sqrt(acr$n/pi),inches=0.14/1.9,bg=acr$col_bg, fg=adjustcolor(acr$col_,alpha.f = 0.7),add=TRUE) #adjustcolor(acr$col_,alpha.f = 0.1) #col_pb
+	
+  text(x = c(1945), y =c(37), labels= expression(italic('N')['populations']), col='grey18', cex = 0.5, xpd = TRUE, adj = 0)
+	symbols(c(1950,1950, 1950)+5,c(29,19.5,7), circles=sqrt(c(5, 15,25)/pi),inches=0.14/1.9,bg=col_pb, fg=col_p,add=TRUE)
+	text(x = c(1950,1950, 1950)+5+9,c(29,19.5,7), labels= c(5,15,25), col='grey18', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))	
+  #text(x = c(1950), y =c(37), labels= substitute(paste(italic('N'), " populations:", sep="")), col='grey18', cex = 0.5, xpd = TRUE, adj = 0)
+	#symbols(c(1970,1970, 1970, 1900),c(29,19.5,7,-20), circles=sqrt(c(5, 15,30,33)/pi),inches=0.14/1.75,bg=col_pb, fg=col_p,add=TRUE)
+	#text(x = c(1970,1970, 1970, 1900)+9,c(29,19.5,7,-20), labels= c(5,15,30,10), col='grey18', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
 	
    #text(x = 1990,y = 90, labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
    #text(x = 1954,y = 75, labels= 'All', col='black', cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
    
-   text(x = 1995,y = 95, labels= 'All', col='black', cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
-   text(x = 1995,y = 95*(1-0.07352941), labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
-   text(x = 1995,y = 95*(1-0.07352941*2), labels= 'Rest', col=rest, cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
-
- 	
+   #text(x = 1995,y = 95, labels= 'All', col='black', cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
+   #text(x = 1995,y = 95*(1-0.07352941), labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
+   #text(x = 1995,y = 95*(1-0.07352941*2), labels= 'Rest', col=rest, cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))
+   
+   #text(x = 1957,y = 93, labels= 'All', col='grey25', cex = 0.5, xpd = TRUE, adj=0)#c(0.5,0.5))   
+   #text(x = 1990,y = 90, labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+   ##text(x = 1988,y = 83, labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+   #text(x = 2009,y = 79, labels= 'Rest', col=rest, cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+   text(x = 1954,y = 75, labels= 'Rest', col=rest, cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+ 	text(x = 1990,y = 30, labels= 'Arctic', col=col_$line_col[col_$Belt%in%c('Arctic')], cex = 0.5, xpd = TRUE, adj=c(0.5,0.5))
+	
 # H Simulation
   cols = brewer.pal(n = 11, name = "Spectral")[c(1:5,8:11)]
     
@@ -256,19 +269,22 @@ layout(mat = matrix(c(1,2,3,4,
   text(x = c(2003), y =0.157-(1)*0.06923077*0.157, labels= c('Observed'), col='grey18', cex = 0.5, adj = 1)
   text(x = c(2003), y =0.157-(2)*0.06923077*0.157, labels= c('nesting'), col='grey18', cex = 0.5, adj = 1)
   text(x = c(2003), y =0.157-(3)*0.06923077*0.157, labels= c('period'), col='grey18', cex = 0.5, adj = 1)
-  text(x = c(2003), y =0.157-(4)*0.06923077*0.157, labels= substitute(paste("(",italic('B'), ")", sep="")), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(2003), y =0.157-(4)*0.06923077*0.157, labels= "(proportion)", col='grey18', cex = 0.5, adj = 1)
+  lines(c(2004,2004),c(0.11,0.15), lwd = 0.25, lty = 1, col = 'grey80', xpd=FALSE)
+  #text(x = c(2003), y =0.157-(4)*0.06923077*0.157, labels= substitute(paste("(",italic('B'), ")", sep="")), col='grey18', cex = 0.5, adj = 1)
   #text(x = c(2005), y =0.157-(2)*0.06923077*0.157, labels= c('Observed\nnesting\nperiod'), col='grey18', cex = 0.5, adj = 1)
   for(i in 1:length(seq(0.1,0.9,by=0.1))){
+			#text(x = 2015, y =0.157-(i)*0.06923077*0.157, labels= paste(seq(0.1,0.9,by=0.1)*100,"%", sep="")[i], col=cols[i], cex = 0.5, adj = 1)
 			text(x = 2013, y =0.157-(i)*0.06923077*0.157, labels= seq(0.1,0.9,by=0.1)[i], col=cols[i], cex = 0.5, adj = 1)
 			}
   text(x = 2016, y =0.16*0.98, labels= expression(bold("H")), col='black', cex = 0.7, xpd = TRUE)		
 for(i in 1: length(seq(0.1,0.9, by = 0.1))){
  #i=4
- ppi = ppl[B == seq(0.1,0.9, by = 0.1)[i],]
+ ppi = ppl[ppl$B == seq(0.1,0.9, by = 0.1)[i],]
  polygon(c(ppi$mean_year, rev(ppi$mean_year)), c(ppi$lwr, 
  rev(ppi$upr)), border=NA, col = adjustcolor(cols[i],alpha.f = 0.1), xpd = FALSE)#adjustcolor(col_t ,alpha.f = 0.2)) #0,0,0 black 0.5 is transparents RED
 lines(ppi$mean_year, ppi$pred, col=cols[i],lwd=1)
-print(B)
+print(seq(0.1,0.9, by = 0.1)[i])
 	}			
 
 # I
@@ -285,14 +301,18 @@ print(B)
   #for(i in 1:length(seq(0.1,0.9,by=0.1))){
 	#		text(x = 0.25, y =0.75-(i)*0.06923077*0.75, labels= seq(0.1,0.9,by=0.1)[i], col=cols[i], cex = 0.5, adj = 1)
 	#		}	
-  text(x = c(0.07), y =0.20-(1)*0.06923077*0.20, labels= c('Observed'), col='grey18', cex = 0.5, adj = 1)
-  text(x = c(0.07), y =0.20-(2)*0.06923077*0.20, labels= c('nesting'), col='grey18', cex = 0.5, adj = 1)
-  text(x = c(0.07), y =0.20-(3)*0.06923077*0.20, labels= c('period'), col='grey18', cex = 0.5, adj = 1)
-  text(x = c(0.07), y =0.20-(4)*0.06923077*0.20, labels= substitute(paste("(",italic('B'), ")", sep="")), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07)+0.005, y =0.20-(1)*0.06923077*0.20, labels= c('Observed'), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07)+0.005, y =0.20-(2)*0.06923077*0.20, labels= c('nesting'), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07)+0.005, y =0.20-(3)*0.06923077*0.20, labels= c('period'), col='grey18', cex = 0.5, adj = 1)
+  text(x = c(0.07)+0.005, y =0.20-(4)*0.06923077*0.20, labels= "(proportion)", col='grey18', cex = 0.5, adj = 1)
+  lines(c(0.08,0.08),c(0.14,0.19), lwd = 0.25, lty = 1, col = 'grey80', xpd=FALSE)
+  #text(x = c(0.07), y =0.20-(4)*0.06923077*0.20, labels= substitute(paste("(",italic('B'), ")", sep="")), col='grey18', cex = 0.5, adj = 1)
   #text(x = c(2005), y =0.157-(2)*0.06923077*0.157, labels= c('Observed\nnesting\nperiod'), col='grey18', cex = 0.5, adj = 1)
   for(i in 1:length(c(0.5,0.6,0.9))){
-			text(x =0.08, y =0.20-(i)*0.06923077*0.20, labels= c(0.5,0.6,0.9)[i], col=cols[c(5,6,9)][i], cex = 0.5, adj = 0)
+			#text(x =0.075, y =0.20-(i)*0.06923077*0.20, labels= paste(c(0.5,0.6,0.9)*100,"%", sep="")[i], col=cols[c(5,6,9)][i], cex = 0.5, adj = 0)#
+			text(x =0.08+0.005, y =0.20-(i)*0.06923077*0.20, labels= c(0.5,0.6,0.9)[i], col=cols[c(5,6,9)][i], cex = 0.5, adj = 0)#
 			}	
+	#text(x =0.09, y =0.20-(i)*0.06923077*0.20, labels= c(0.5,0.6,0.9)[i], col="#e4c97d", cex = 0.5, adj = 0)#
 	#text(x =0.11, y =0.20-(1)*0.06923077*0.20, labels= 'variable', col=recent, cex = 0.5, adj = 0)
 	#text(x =0.11, y =0.20-(2)*0.06923077*0.20, labels= '(original)', col=recent, cex = 0.5, adj = 0)
 # variable Author's conversion
@@ -322,8 +342,6 @@ for(i in c(5,6,9)){
 	print(r)
 	}
 
-
-	
 lines(c(0,0.19),c(0,0.19), lwd = 1, lty = 3, col = 'black', xpd=FALSE)
 text(x = 0.2, y =0.2*0.98, labels= expression(bold("I")), col='black', cex = 0.7, xpd = TRUE)
  
