@@ -1,5 +1,5 @@
 # PACKAGES
-sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice','mgcv','multcomp','phytools','plyr','raster','RColorBrewer','XLConnect'),
+sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice','mgcv','multcomp','phytools','plyr','raster','RColorBrewer','readxl','writexl'), #XLConnect
     function(x) suppressPackageStartupMessages(require(x , character.only = TRUE, quietly = TRUE) ))
 
 # CONSTANTS
@@ -70,32 +70,63 @@ sapply(c('AICcmodavg','ape','arm','coxme','effects', 'ggplot2','grid', 'lattice'
   newphylo <- bind.tip(tree = phylo, tip.label = newname, edge.length = phylo$edge.length[ed], where = to )
   return( newphylo)
 }
+
 # model output function
-  m_out = function(name = "define", model = m, round_ = 3, nsim = 5000, aic = TRUE){
+  m_out = function(name = "define", model = m, round_ = 3, nsim = 5000, aic = TRUE, save_sim = FALSE){
 	bsim <- sim(model, n.sim=nsim)  
+    if(save_sim!=FALSE){save(bsim, file = paste0(save_sim, name,'.RData'))}
 	 v = apply(bsim@fixef, 2, quantile, prob=c(0.5))
 	 ci = apply(bsim@fixef, 2, quantile, prob=c(0.025,0.975))	
-	 oi=data.frame(model=name,type='fixed',effect=rownames(coef(summary(model))),estimate=v, lwr=ci[1,], upr=ci[2,])
+	 oi=data.frame(name = name,type='fixed',effect=rownames(coef(summary(model))),estimate=v, lwr=ci[1,], upr=ci[2,])
 			rownames(oi) = NULL
 			oi$estimate_r=round(oi$estimate,round_)
 			oi$lwr_r=round(oi$lwr,round_)
 			oi$upr_r=round(oi$upr,round_)
-	oii=oi[c('model','type',"effect", "estimate_r","lwr_r",'upr_r')]	
+	oii=oi[c('name','type',"effect", "estimate_r","lwr_r",'upr_r')]	
 	
 	 l=data.frame(summary(model)$varcor)
 	 l = l[is.na(l$var2),]
 	 l$var1 = ifelse(is.na(l$var1),"",l$var1)
 	 l$pred = paste(l$grp,l$var1)
-	ri=data.frame(model=name,type='random %',effect=l$pred, estimate_r=round(100*l$vcov/sum(l$vcov)), lwr_r=NA, upr_r=NA)
-	ri$estimate_r = paste(ri$estimate_r,'%',sep='')
-	x = rbind(oii,ri)
+
+   q050={}
+   q025={}
+   q975={}
+   pred={}
+   
+   # variance of random effects
+   for (ran in names(bsim@ranef)) {
+     ran_type = l$var1[l$grp == ran]
+     for(i in ran_type){
+      q050=c(q050,quantile(apply(bsim@ranef[[ran]][,,ran_type], 1, var), prob=c(0.5)))
+      q025=c(q025,quantile(apply(bsim@ranef[[ran]][,,ran_type], 1, var), prob=c(0.025)))
+      q975=c(q975,quantile(apply(bsim@ranef[[ran]][,,ran_type], 1, var), prob=c(0.975)))
+      pred= c(pred,paste(ran, i))
+      }
+     }
+   # residual variance
+   q050=c(q050,quantile(bsim@sigma^2, prob=c(0.5)))
+   q025=c(q025,quantile(bsim@sigma^2, prob=c(0.025)))
+   q975=c(q975,quantile(bsim@sigma^2, prob=c(0.975)))
+   pred= c(pred,'Residual')
+
+	 ri=data.frame(name = name,type='random %',effect=pred, estimate_r=round(100*q050/sum(q050)), lwr_r=round(100*q025/sum(q025)), upr_r=round(100*q975/sum(q975)))
+     rx = ri[ri$effect == 'Residual',]
+     if(rx$lwr_r>rx$upr_r){ri$lwr_r[ri$effect == 'Residual'] = rx$upr_r; ri$upr_r[ri$effect == 'Residual'] = rx$lwr_r}
+     ri$estimate_r = paste0(ri$estimate_r,'%')
+     ri$lwr_r = paste0(ri$lwr_r,'%')
+     ri$upr_r = paste0(ri$upr_r,'%')
+	
+  x = rbind(oii,ri)
 	if (aic == TRUE){	
+    modelML = update(model, . ~ ., REML = FALSE)
 		x$AIC = NA
-		x$AIC[1]=AIC(model) # note that this one is incorrect because it is fitted with REML
+		x$AIC[1]=AIC(modelML)
 		x$delta = x$prob = x$ER = NA
 		}
     return(x)
   } 
+
 # model assumption function
   m_ass = function(name = 'define', mo = m0, dat = d, fixed = NULL, categ = NULL, trans = NULL, spatial = TRUE, temporal = TRUE, PNG = TRUE){
    l=data.frame(summary(mo)$varcor)

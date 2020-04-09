@@ -3,8 +3,10 @@
 rm( list = ls() )	
 
 # set working and output directories
-wd = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Analyses/'
-outdir = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Outputs/'
+wd = "/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Analyses/"
+outdir = '/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Outputs/'
+#wd = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Analyses/'
+#outdir = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Outputs/'
 
 # print figures in PNG or not
 PNG = TRUE
@@ -49,16 +51,16 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 	m_ass(name = 'DPR_yearIntBelt2000AT', mo = m5, dat = d[d$mean_year>2000 & d$Belt%in%c('North temperate','Arctic'),], fixed = c('N_nests','mean_year'),categ = 'Belt', trans = c('log','none','none'),spatial = TRUE, temporal = TRUE, PNG = TRUE)
 	m_ass(name = 'DPR_yearIntBelt-AT', mo = m6, dat = d[d$Belt%in%c('North temperate','Arctic'),], fixed = c('N_nests','mean_year'),categ = 'Belt', trans = c('log','none','none'),spatial = TRUE, temporal = TRUE, PNG = TRUE)
 	# model outputs
-	 om0 = m_out(name = "simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE)
-	 om1 = m_out(name = "interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE)
-	 om2 = m_out(name = "interaction poly", model = m2, round_ = 3, nsim = 5000, aic = FALSE)
+	 om0 = m_out(name = "S2A DPR simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om1 = m_out(name = "S2B DPR interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om2 = m_out(name = "S2D DPR interaction poly", model = m2, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
 		bsim <- sim(m2, n.sim=nsim)  	 
 		sum(bsim@fixef[,c('poly(mean_year, 2)2:BeltNorth temperate')]<0)/nsim #	bsim@fixef[6,7]
-	 om3 = m_out(name = "simple poly", model = m3, round_ = 3, nsim = 5000, aic = FALSE)
-	 om5 = m_out(name = "interaction poly >2000 A+T", model = m5, round_ = 3, nsim = 5000, aic = FALSE)
+	 om3 = m_out(name = "S2C DPR simple poly", model = m3, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om5 = m_out(name = "interaction poly >2000 A+T", model = m5, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
 		bsim <- sim(m2, n.sim=nsim)  	 
 		sum(bsim@fixef[,c('poly(mean_year, 2)2:BeltNorth temperate')]<0)/nsim #	bsim@fixef[6,7]
-	 om6 = m_out(name = "interaction poly all A+T", model = m5, round_ = 3, nsim = 5000, aic = FALSE)
+	 om6 = m_out(name = "interaction poly all A+T", model = m5, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
 		bsim <- sim(m6, n.sim=nsim)  	 
 		sum(bsim@fixef[,c('poly(mean_year, 2)2:BeltNorth temperate')]>0)/nsim #	bsim@fixef[6,7]
 # TPR
@@ -89,17 +91,19 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 	m_ass(name = 'TPR_yearIntBelt2000AT', mo = m5, dat = d[d$mean_year>2000 & d$Belt%in%c('North temperate','Arctic'),], fixed = c('N_nests','mean_year'),categ = 'Belt', trans = c('log','none','none'),spatial = TRUE, temporal = TRUE, PNG = TRUE)
 	
 	# model outputs
-	 om0t = m_out(name = "simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE)
-	 om1t = m_out(name = "interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE)
-	 om2t = m_out(name = "interaction poly", model = m2, round_ = 3, nsim = 5000, aic = FALSE)
-	 om3t = m_out(name = "simple poly", model = m3, round_ = 3, nsim = 5000, aic = FALSE)
+	 om0t = m_out(name = "S2A TPR simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om1t = m_out(name = "S2B TPR interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om2t = m_out(name = "S2D TPR interaction poly", model = m2, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om3t = m_out(name = "S2C TPR simple poly", model = m3, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
 		bsim <- sim(m2, n.sim=nsim)  	 
 		sum(bsim@fixef[,c('poly(mean_year, 2)2:BeltNorth temperate')]<0)/nsim #	bsim@fixef[6,7]
 # EXPORT
-	sname = tempfile(fileext='.xls')
-		wb = loadWorkbook(sname,create = TRUE)	
-		createSheet(wb, name = "DPR")
-		writeWorksheet(wb, rbind(om0,om1, om3,om2), sheet = "DPR")
-	createSheet(wb, name = "TPR")
-	writeWorksheet(wb, rbind(om0t,om1t, om3t,om2t), sheet = "TPR")
-	saveWorkbook(wb, paste(outdir,'TABLE_S2.xls'))
+  l = list()
+  l[['dpr']] = rbind(om0,om1, om3,om2)
+  l[['tpr']] = rbind(om0t,om1t, om3t,om2t)
+           
+  sname = 'Table_S2'
+  tmp = write_xlsx(l, paste0(outdir,sname,'.xlsx'))
+  #openFile(tmp)   
+  #shell(sname)
+

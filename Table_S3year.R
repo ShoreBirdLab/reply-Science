@@ -1,8 +1,10 @@
 rm( list = ls() )	
 
 # set working and output directories
-wd = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Analyses/'
-outdir = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Outputs/'
+wd = "/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Analyses/"
+outdir = '/Users/martinbulla/Dropbox/Science/ms_published/Kubelka_et_al_rebuttal/Outputs/'
+#wd = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Analyses/'
+#outdir = 'C:/Users/mbulla/Documents/Dropbox/Science/Projects/MS/Kubelka_et_al_rebuttal/Outputs/'
 
 # print figures in PNG or not
 PNG = TRUE
@@ -33,10 +35,10 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 	
 	
 	# model outputs
-	 om0 = m_out(name = "simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE)
-	 om1 = m_out(name = "interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE)
-	 om4 = m_out(name = "simple poly3", model = m4, round_ = 3, nsim = 5000, aic = FALSE)
-	 om5 = m_out(name = "interaction poly3", model = m5, round_ = 3, nsim = 5000, aic = FALSE)
+	 om0 = m_out(name = "S3Ayear DPR simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om1 = m_out(name = "S3Byear DPR interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om4 = m_out(name = "S3Cyear DPR simple poly3", model = m4, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om5 = m_out(name = "S3Dyear DPR interaction poly3", model = m5, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
 
     
 # TPR
@@ -59,20 +61,20 @@ source(paste(wd, 'Prepare_Data.R',sep="")) # generates 18 warnings, same way as 
 	m_ass(name = 'TPR_year-poly3(lat)', mo = m5, dat = d, fixed = c('N_nests','mean_year', 'Latitude'),categ = NULL, trans = c('log','none','none'), spatial = TRUE, temporal = TRUE, PNG = TRUE)
 	
 	# model outputs
-	 om0t = m_out(name = "simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE)
-	 om1t= m_out(name = "interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE)
-	 om4t = m_out(name = "simple poly3", model = m4, round_ = 3, nsim = 5000, aic = FALSE)
-	 om5t = m_out(name = "interaction poly3", model = m5, round_ = 3, nsim = 5000, aic = FALSE)
+	 om0t = m_out(name = "S3Ayear TPR simple linear", model = m0, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om1t= m_out(name = "S3Byear TPR interaction linear", model = m1, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om4t = m_out(name = "S3Cyear TPR simple poly3", model = m4, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
+	 om5t = m_out(name = "S3Dyear TPR interaction poly3", model = m5, round_ = 3, nsim = 5000, aic = FALSE, save_sim = paste0(wd, 'posteriory_simulations/'))
 	 #om3$AIC = NA
 	 #om4 = m_out(name = "interaction poly >2000 A+T", model = m4, round_ = 3, nsim = 5000, aic = FALSE)
 	 #om4$AIC = NA
     
-
-# EXPORT
-	sname = tempfile(fileext='.xls')
-		wb = loadWorkbook(sname,create = TRUE)	
-		createSheet(wb, name = "DPR")
-		writeWorksheet(wb, rbind(om0,om1, om4,om5), sheet = "DPR")
-	createSheet(wb, name = "TPR")
-	writeWorksheet(wb, rbind(om0t,om1t, om4t,om5t), sheet = "TPR")
-	saveWorkbook(wb, paste(outdir,'TABLE_S3year.xls'))
+# EXPORT model output
+  l = list()
+  l[['dpr']] = rbind(om0,om1, om4,om5)
+  l[['tpr']] = rbind(om0t,om1t, om4t,om5t)
+           
+  sname = 'Table_S3year'
+  tmp = write_xlsx(l, paste0(outdir,sname,'.xlsx'))
+  #openFile(tmp)   
+  #shell(sname)
